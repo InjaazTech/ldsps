@@ -1,0 +1,29 @@
+<%- model_class = WebsiteConfig -%>
+<div class="page-header">
+  <h3><%=t model_class.human_attribute_name(:model_name) %></h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:ar_title) %></th>
+      <th><%= model_class.human_attribute_name(:val) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @website_configs.each do |website_config| %>
+      <tr>
+        <td><%= website_config.ar_title %></td>
+        <% if website_config.image? %>
+          <td><%= image_tag website_config.val, class: 'thumb' %></td>
+        <% else %>
+        <td><%= website_config.val %></td>
+        <% end %>
+        <td>
+          <%= link_to '<i class="fa fa-pencil"></i>'.html_safe,
+                      edit_admin_website_config_path(website_config), :class => 'btn btn-default btn-xs' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+<footer class="section-padding section-2-bg footer-section" id="contact">
+  <div class="container">
+     <div class="text-center footer-div">
+      <div class="col-sm-12">
+        <div class="row contact-row">
+          <div class="col-xs-6 col-sm-12 contact-space contact-space-1">
+            <img src="<%= asset_path('website/48x48x6.png') %>" alt="48x48x6" />
+            <p><%= WebsiteConfig.get('email', current_locale) %></p>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <ul>
+          <li>
+            <a href="<%= WebsiteConfig.get('facebook', current_locale) %>"><img src="<%= asset_path('website/48x48x9.png') %>" alt="48x48x9" class="img-responsive" /></a>
+          </li>
+        </ul>
+        <div class="separator"></div>
+        <div class="copyright">
+          <p><%= WebsiteConfig.get('copyright', current_locale) %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,5 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h3><%= link_to '<i class="icon-line-arrow-right"></i>'.html_safe, admin_posts_path %> <%= @title %></h3>
+</div>
+<%= render :partial => 'form' %>

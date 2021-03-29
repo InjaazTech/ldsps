@@ -1,0 +1,21 @@
+<% unless @team_members.empty?%>
+<section class="section-padding section-4-bg" id="donators">
+  <div class="container">
+    <div class="heading-div-2 text-center">
+      <h2><%=t('team.title')%></h2>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div>
+    		
+    <div class="row donators-profile">
+      <% @team_members.each do |team_member| %>
+       <div class="col-xs-6 col-sm-6 col-md-3">
+        <div class="donators-profile-col text-center">
+          <img src="<%= team_member.image_url %>" alt="150x150x1" />
+          <p><%= team_member.name(current_locale) %></p>
+        </div>
+      </div>
+      <% end %>
+    </div> 	
+  </div>
+</section>
+<% end %>

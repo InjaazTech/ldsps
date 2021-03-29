@@ -1,0 +1,19 @@
+<% unless @sponsers.empty?%>
+<section class="section-padding section-1-bg">
+  <div class="container">							
+    <div class="heading-div text-center">
+      <h2><%=t('sponsers.title')%></h2>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div> 
+    <div class="row sponsors-row">
+      <% @sponsers.each do |sponser| %>
+      <div class="col-xs-6 col-sm-4 col-md-2 sponsors-space-1">
+        <a href="<%= sponser.pretty_link%>">
+        <img src="<%= sponser.image_url %>" alt="180x120x1" class="img-responsive"/>
+        </a>	
+      </div>
+      <% end %>
+    </div>	
+  </div>			
+</section>
+<% end %>

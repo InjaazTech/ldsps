@@ -1,0 +1,32 @@
+<% if @post.present?%>
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Apartment",
+      "name": "<%= @post.title(current_locale)%>",
+      "description": "<%= @post.content(current_locale)%>",
+      "numberOfRooms": 0,
+      "tourBookingPage": "",
+      "telephone": "<%= WebsiteConfig.get('phone', current_locale) %>",
+      "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "UK",
+          "addressLocality": "<%= @post.title(current_locale)%>",
+          "streetAddress": "<%= @post.title(current_locale)%>"
+      }
+  }
+</script>
+<% else %>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Homemaze",
+    "email": "info@homemaze.co.uk",
+    "description": "Realestate",
+    "image": "<%= WebsiteConfig.get('logo', current_locale) %>",
+    "priceRange": "££",
+    "telephone": "<%= WebsiteConfig.get('phone', current_locale) %>"
+  }
+</script>
+<% end %>

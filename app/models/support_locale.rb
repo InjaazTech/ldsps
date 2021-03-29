@@ -1,0 +1,2 @@
+class SupportLocale < ApplicationRecord
+end

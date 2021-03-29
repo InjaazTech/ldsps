@@ -1,0 +1,9 @@
+<meta property="og:url" content="<%= request.url.to_s.force_encoding('UTF-8') %>" />
+<meta property="og:type" content="<%= @post.present? ? 'article' : 'website' %>" />
+<meta property="og:title" content="<%= @title %>" />
+<meta property="og:description" content="<%= @description %>" />
+<% if @post.present?%>
+  <meta property="og:image" content="<%= @post.image_url %>" />
+<% else %>
+  <meta property="og:image" content="<%= asset_url('website/social-logo.png')%>" />
+<% end %>

@@ -1,0 +1,5 @@
+<%- model_class = FaQuestion -%>
+<div class="page-header">
+  <h3><%= link_to '<i class="icon-line-arrow-right"></i>'.html_safe, admin_fa_questions_path %> <%= @title %></h3>
+</div>
+<%= render :partial => 'form' %>

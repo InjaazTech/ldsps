@@ -1,0 +1,48 @@
+<%- model_class = WebsiteConfig -%>
+<div id="content">
+  <%= render 'admin-shared/header'%>
+  <div class="container-fluid">
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold"><%=t model_class.human_attribute_name(:model_name) %></p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+            </div>
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table my-0" id="dataTable">
+                    <thead>
+                        <tr>
+                          <th><%= model_class.human_attribute_name(:ar_title) %></th>
+                          <th><%= model_class.human_attribute_name(:val) %></th>
+                          <th><%=t '.actions', :default => t("helpers.actions") %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% @website_configs.each do |website_config| %>
+                          <tr>
+                            <td><%= website_config.ar_title %></td>
+                            <% if website_config.image? %>
+                              <td><%= image_tag website_config.val, class: 'thumb' %></td>
+                            <% else %>
+                            <td><%= website_config.val.to_s[0..100] %></td>
+                            <% end %>
+                            <td>
+                              <%= link_to '<i class="fa fa-pencil"></i>'.html_safe,
+                                          edit_admin_website_config_path(website_config), :class => 'btn btn-default btn-xs' %>
+                            </td>
+                          </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-6">
+                  <%= paginate @website_configs %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

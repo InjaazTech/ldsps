@@ -1,0 +1,2 @@
+class FaQuestion < ApplicationRecord
+end

@@ -1,0 +1,30 @@
+<section class="section-padding section-2-bg mt-50">
+  <div class="container">
+    <div class="heading-div text-center">
+      <h2><%=t('reports.title')%></h2>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div>
+  </div>
+</section>
+<section class="section-padding section-1-bg">
+  <div class="container">
+    <div class="row">
+      <% @reports.each do |report| %>
+      <div class="col-sm-4 camps-done-col">
+        <img
+          src="<%= report.image_url %>"
+          alt="<%= report.title(current_locale) %>"
+          class="img-responsive"
+        />
+        <h3><%= report.title(current_locale) %></h3>
+        <p>
+          <%= report.subtitle(current_locale) %>
+        </p>
+        <a href="<%= report.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
+      </div>
+      <% end %>
+    </div>
+    <div class="heading-div text-center">
+    </div>
+  </div>
+</section>

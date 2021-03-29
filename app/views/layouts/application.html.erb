@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="<%= arabic? ? 'rtl' : 'ltr' %>" lang="<%= arabic? ? 'ar' : 'en-US' %>">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title><%= WebsiteConfig.get('title', current_locale) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="<%= WebsiteConfig.get('author', current_locale) %>" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700|Open+Sans:300,400,600,700,800,900&display=swap" rel="stylesheet" type="text/css" />
+    <% if arabic? %>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notokufiarabic.css">
+      <%= stylesheet_link_tag    'application_ar', media: 'all' %>
+    <% else %>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+    <% end %>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="<%= asset_path('favicon/fav.png') %>">
+    <% if @description.present?%>
+      <meta name="description" content="<%= @description %>" />
+    <% end %>
+    <% if @keywords.present?%>
+      <meta name="keywords" content="<%= @keywords %>" />
+    <% end %>
+    <%= render 'shared/social_cards'%>
+    <%= render 'shared/ld_json'%>
+    <% if @canonical_link.present? %>
+      <link rel="canonical" href="<%= @canonical_link %>">
+    <% end %>
+    <% unless Rails.env.production?%>
+  <meta name="robots" content="noindex,nofollow">
+    <% end %>
+    <%= yield :recaptcha_js %>
+  </head>
+
+  <body>
+    <%= render 'shared/header'%>
+    <%= yield %>
+    <%= render 'shared/footer'%>
+    <div id="fade"></div>
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>

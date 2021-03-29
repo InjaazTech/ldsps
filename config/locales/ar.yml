@@ -1,0 +1,46 @@
+ar:
+  header:
+    menu:
+      home: 'الرئيسية'
+      contact: 'اتصل بنا'
+      about: 'من نحن'
+      projects: 'المشاريع'
+      reports: 'التقارير'
+      lang: 'English'
+  contact_form:
+    title: 'أرسل رسالة'
+    name: 'الاسم'
+    email: 'البريد الإلكتروني'
+    phone: 'هاتف'
+    subject: 'عنوان'
+    message: 'نص الرسالة'
+    submit: 'أرسل'
+    twitter: 'تويتر'
+    skype: 'سكايب'
+    address: 'العنوان'
+    speak: 'اتصل بنا'
+    send_failed: 'فشلت العملية للأسف'
+  block1:
+    title: 'نص هنا'
+    subtitle1: 'نص هنا'
+    text1: 'نص هنا'
+    subtitle2: 'نص هنا'
+    text2: 'نص هنا'
+    subtitle3: 'نص هنا'
+    text3: 'نص هنا'
+    subtitle4: 'نص هنا'
+    text4: 'نص هنا'
+  projects:
+    title: 'مشاريعنا'
+    all: 'كل المشاريع'
+  reports:
+    title: 'تقارير'
+    all: 'كل التقارير'
+  sponsers:
+    title: 'الداعمين'
+  team:
+    title: 'فريق العمل'
+  show: عرض
+  read_more: المزيد
+  about:
+    title: 'من نحن'

@@ -1,0 +1,90 @@
+<%= form_for @slider, url: (@slider.new_record? ? admin_sliders_url : admin_slider_path(@slider)), :html => { :class => "form-horizontal slider" } do |f| %>
+
+  <% if @slider.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@slider.errors.count, "error") %> prohibited this slider from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @slider.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :attachment_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <div id="fileuploader">Upload</div>
+      <%= f.hidden_field :attachment_id, id: 'attachment_id' %>
+      <%= image_tag @slider.image_url, class: 'thumb' if !@slider.new_record? %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :link, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :link, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ar_link_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ar_link_title, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :en_link_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :en_link_title, :class => 'form-control', dir: 'ltr' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ar_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ar_title, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :en_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :en_title, :class => 'form-control', dir: 'ltr' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ar_subtitle, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ar_subtitle, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :en_subtitle, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :en_subtitle, :class => 'form-control', dir: 'ltr' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :order_position, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :order_position, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :hidden, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10 switch">
+      <%= f.check_box :hidden, :class => 'switch-toggle switch-toggle-round', id: 'switch-toggle-1' %>
+      <label for="switch-toggle-1"></label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit t('helpers.links.submit'), :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_sliders_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

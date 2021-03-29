@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+Disallow: /admin/*
+Disallow: /search*
+Sitemap: http://ldsps.org/sitemap.xml.gz

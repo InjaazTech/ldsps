@@ -1,0 +1,9 @@
+ar:
+  ckeditor:
+    page_title: 'مدير الملفات'
+    confirm_delete: 'تأكيد الحذف؟'
+    buttons:
+      cancel: 'تراجع'
+      upload: 'رفع ملف'
+      delete: 'حذف'
+      next: 'التالي'

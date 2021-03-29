@@ -1,0 +1,17 @@
+ar:
+  views:
+    pagination:
+      first: "&laquo; بداية"
+      last: "الآخر &raquo;"
+      previous: "&lsaquo; سابق"
+      next: "تالي &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "لا يوجد نتائج"
+          one: "عرض <b>1</b> %{entry_name}"
+          other: "عرض <b>الكل %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "عرض %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> من أصل"

@@ -1,0 +1,45 @@
+<%= form_for @website_config, url: (@website_config.new_record? ? admin_website_configs_url : admin_website_config_path(@website_config)), :html => { :class => "form-horizontal website_config" } do |f| %>
+
+  <% if @website_config.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@website_config.errors.count, "error") %> prohibited this website_config from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @website_config.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  
+  <% if @website_config.image? %>
+    <div class="form-group">
+      <%= f.label :val, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <div id="fileuploader">Upload</div>
+        <%= f.hidden_field :val, id: 'attachment_url' %>
+        <%= image_tag @website_config.val, class: 'thumb' if @website_config.val.present? %>
+      </div>
+    </div>
+  <% else %>
+    <div class="form-group">
+      <%= f.label :val, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.text_field :val, :class => 'form-control' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit t('helpers.links.submit'), :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_website_configs_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

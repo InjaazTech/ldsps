@@ -1,0 +1,52 @@
+<header class="clearfix">
+  <nav class="navbar navbar-default navbar-fixed-top clearfix" id="top-nav">
+    <div class="container">
+      <div class="logo-image">
+        <a href="/<%= current_locale %>"><img src="<%= WebsiteConfig.get('logo', current_locale) %>" alt="logo" class="logo" />&nbsp;<%= WebsiteConfig.get('logo-title', current_locale) %></a>
+      </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>					
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right" id="menu-list">
+          <li class="menu <%= 'active' if @home_active%>">
+            <a href="/<%= current_locale %>" class="pagescroll">
+              <%= t('header.menu.home') %>
+            </a>
+          </li>
+          <li class="menu <%= 'active' if @projects_active%>">
+            <a href="<%= projects_path(current_locale)%>" class="pagescroll">
+              <%= t('header.menu.projects') %>
+            </a>
+          </li>	
+          <li class="menu <%= 'active' if @reports_active%>">
+            <a href="<%= reports_path(current_locale)%>" class="pagescroll">
+              <%= t('header.menu.reports') %>
+            </a>
+          </li>
+          <li class="menu <%= 'active' if @about_active%>">
+            <a href="<%= about_path(current_locale) %>" class="pagescroll">
+              <%= t('header.menu.about') %>
+            </a>
+          </li>
+          <li class="menu <%= 'active' if @contact_active%>">
+            <a href="<%= contact_us_path(current_locale) %>" class="pagescroll">
+              <%= t('header.menu.contact') %>
+            </a>
+          </li>
+          <li class="menu">
+            <a href="<%= arabic? ? '/en' : '/ar' %>" class="pagescroll">
+              <%= t('header.menu.lang') %>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+  </nav>
+</header>

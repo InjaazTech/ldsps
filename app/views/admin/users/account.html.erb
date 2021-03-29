@@ -1,0 +1,100 @@
+<%- model_class = User -%>
+<div id="content">
+  <%= render 'admin-shared/header'%>
+  <div class="container-fluid">
+    <h3 class="text-dark mb-4"><%= t('admin.profile.title')%></h3>
+    <div class="row mb-3">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col">
+                  <% if @user.errors.any? %>
+                    <div id="error_expl" class="panel panel-danger">
+                      <div class="panel-heading">
+                        <h3 class="panel-title"><%= t('admin.failed')%></h3>
+                      </div>
+                      <div class="panel-body">
+                        <ul>
+                        <% @user.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                        <% end %>
+                        </ul>
+                      </div>
+                    </div>
+                  <% end %>
+                    <div class="card shadow mb-3">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold"><%= t('profile.user_settings')%></p>
+                        </div>
+                        <div class="card-body">
+                          <%= form_for @user, url: admin_update_account_path, method: :put, html: { autocomplete: 'off' } do |f| %>
+                                <div class="form-row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                          <%= f.label :email %>
+                                          <%= f.email_field :email, :class => 'form-control' %>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <%= f.label :locale %>
+                                        <%= f.select :locale, I18n.t('languages').keys.collect {|k| [ t("languages.#{k.to_s}"), k ] },{},{:class => 'form-control'}%>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <%= f.label :first_name %>
+                                      <%= f.text_field :first_name, :class => 'form-control' %>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <%= f.label :last_name %>
+                                      <%= f.text_field :last_name, :class => 'form-control' %>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit"><%= t('helpers.links.submit')%></button></div>
+                            <% end %>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold"><%= t('profile.change_password')%></p>
+                    </div>
+                    <div class="card-body">
+                      <%= form_for @user, url: admin_update_account_path, method: :put, html: { autocomplete: 'off' } do |f| %>
+                        <div class="form-row">
+                          <div class="col-12">
+                              <div class="form-group">
+                                <%= f.label :current_password %>
+                                <%= f.password_field :current_password, :class => 'form-control' %>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="col-12">
+                            <div class="form-group">
+                              <%= f.label :password %>
+                              <%= f.password_field :password, :class => 'form-control', autocomplete: 'off' %>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="form-group"><button class="btn btn-primary btn-sm" type="submit"><%= t('helpers.links.submit')%></button></div>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+</div>

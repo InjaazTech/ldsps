@@ -1,0 +1,42 @@
+<%- model_class = Testimonial -%>
+<div class="page-header">
+  <h3><%=t model_class.human_attribute_name(:model_name) %></h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:ar_name) %></th>
+      <th><%= model_class.human_attribute_name(:ar_position) %></th>
+      <th><%= model_class.human_attribute_name(:ar_text) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @testimonials.each do |testimonial| %>
+      <tr>
+        <td><%= testimonial.ar_name %></td>
+        <td><%= testimonial.ar_position %></td>
+        <td><%= testimonial.ar_text %></td>
+        <td><%= testimonial.position %></td>
+        <td><%= short_datetime(testimonial.created_at) %></td>
+        <td>
+          <%= link_to '<i class="fa fa-eye"></i>'.html_safe,
+                      admin_testimonial_path(testimonial), :class => 'btn btn-default btn-xs' %>
+          <%= link_to '<i class="fa fa-pencil"></i>'.html_safe,
+                      edit_admin_testimonial_path(testimonial), :class => 'btn btn-default btn-xs' %>
+          <%= link_to '<i class="fa fa-trash"></i>'.html_safe,
+                      admin_testimonial_path(testimonial),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_testimonial_path,
+            :class => 'btn btn-primary' %>

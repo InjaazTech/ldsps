@@ -1,0 +1,42 @@
+<%= content_for :recaptcha_js do %>
+  <%= include_recaptcha_js %>
+<% end %>
+
+<section class="section-padding section-2-bg mt-50">
+  <div class="container">
+    <div class="heading-div text-center">
+      <h2><%=t('contact_form.title')%></h2>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div>
+  </div>
+</section>
+<section class="section-padding section-1-bg" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 blog-img popup-form">
+				<%= render 'shared/flash'%>
+        <%= form_for @contact_user, url: send_contact_path, :html => { :class => "mb-0", id: 'template-contactform', name: 'template-contactform' } do |f| %>
+				<div class="row">
+					<input class="name col-xs-12 col-sm-12" type="text" name="name" placeholder="<%= t('contact_form.name')%>" required autocomplete="off">
+					<input class="email col-xs-12 col-sm-12" type="email" name="email" placeholder="<%= t('contact_form.email')%>" required autocomplete="off">
+					<input class="phoneno col-xs-12 col-sm-12" type="text" name="phone" placeholder="<%= t('contact_form.phone')%>" autocomplete="off">
+					<input class="phoneno col-xs-12 col-sm-12" type="text" name="subject" placeholder="<%= t('contact_form.subject')%>" required autocomplete="off">
+					<%= f.text_area :message, :class => 'col-xs-12 col-sm-12', id: "template-contactform-message", rows: "6", cols: "30", placeholder: t('contact_form.message') %>	
+				</div>
+									<div class="row popup-form">
+										<div class="col-12 form-group">
+											<%= recaptcha_action('contact') %>
+											<button name="submit" type="submit" id="submit-button" tabindex="5" value="<%= t('contact_form.submit') %>" class="button button-3d m-0 donate-bg"><%= t('contact_form.submit') %></button>
+										</div>
+										<div class="col-12 form-group">
+                        <small>This site is protected by reCAPTCHA and the Google 
+                            <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                            <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+                        </small>
+										</div>
+									</div>
+									<% end %>
+			</div>
+		</div>
+	</div>
+</section>

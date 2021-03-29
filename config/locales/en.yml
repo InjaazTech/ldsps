@@ -1,0 +1,46 @@
+en:
+  header:
+    menu:
+      home: 'home'
+      contact: 'contact'
+      about: 'about'
+      projects: 'projects'
+      reports: 'reports'
+      lang: 'العربية'
+  contact_form:
+    title: 'Send us an email'
+    name: 'Name'
+    email: 'Email'
+    phone: 'Phone'
+    subject: 'Subject'
+    message: 'Message'
+    submit: 'Send'
+    twitter: 'Twitter'
+    skype: 'Skype'
+    address: 'Address'
+    speak: 'Speak to us'
+    send_failed: 'Failed to send your message'
+  block1:
+    title: 'Moving with'
+    subtitle1: 'subtitle1'
+    text1: 'text1'
+    subtitle2: 'subtitle1'
+    text2: 'text1'
+    subtitle3: 'subtitle1'
+    text3: 'text1'
+    subtitle4: 'subtitle1'
+    text4: 'text1'
+  projects:
+    title: 'Our projects'
+    all: 'Our all projects'
+  reports:
+    title: 'Our reports'
+    all: 'Our all reports'
+  sponsers:
+    title: 'Our Beloved Sponsors'
+  team:
+    title: 'Our Team'
+  show: Show
+  read_more: Read more
+  about:
+    title: 'About us'

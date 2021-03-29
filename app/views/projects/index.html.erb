@@ -1,0 +1,28 @@
+<section class="section-padding section-2-bg mt-50">
+  <div class="container">
+    <div class="heading-div text-center">
+      <h2><%=t('projects.title')%></h2>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div>
+  </div>
+</section>
+<section class="section-padding section-1-bg" id="blog">
+  <div class="container">							
+    <% @projects.each do |project| %>
+    <div class="row">					
+      <div class="col-sm-6 blog-img">
+        <img src="<%= project.image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
+      </div>
+      <div class="col-sm-6 blog-col">
+        <h3><%= project.title(current_locale) %></h3>
+        <ul class="blog-date">
+          <li><img src="<%= asset_path('website/32x32x4.png') %>" alt="32x32x4" /></li>
+          <li><%= project.pretty_date %></li>
+        </ul>
+        <p><%= project.subtitle(current_locale) %></p>
+        <a href="<%= project.path(current_locale) %>" class="btn"><%=t('read_more')%></a>	
+      </div>
+    </div>
+    <% end %>
+  </div>			
+</section>

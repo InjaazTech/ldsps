@@ -1,0 +1,61 @@
+<%= javascript_include_tag Ckeditor.cdn_url%>
+
+<%= form_for @wpage, url: (@wpage.new_record? ? admin_wpages_url : admin_wpage_path(@wpage)), :html => { :class => "form-horizontal wpage" } do |f| %>
+
+  <% if @wpage.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@wpage.errors.count, "error") %> prohibited this wpage from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @wpage.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <% SupportLocale.all.each do |locale|%>
+    <div class="form-group">
+      <%= f.label "#{locale.iso_code}_title", :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.text_field "#{locale.iso_code}_title", :class => 'form-control' %>
+      </div>
+    </div>
+  <% end %>
+
+  <% SupportLocale.all.each do |locale|%>
+      <div class="form-group">
+        <%= f.label "#{locale.iso_code}_content", :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+          <%= f.cktext_area "#{locale.iso_code}_content", :class => 'form-control', ckeditor: { language: 'ar', uiColor: '#F0F0F0', enterMode: 2, autoParagraph: false} %>
+        </div>
+      </div>
+    <% end %>
+    
+  <div class="form-group">
+    <%= f.label :show_header, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10 switch">
+      <%= f.check_box :show_header, :class => 'switch-toggle switch-toggle-round', id: 'switch-toggle-1' %>
+      <label for="switch-toggle-1"></label>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :show_footer, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10 switch">
+      <%= f.check_box :show_footer, :class => 'switch-toggle switch-toggle-round', id: 'switch-toggle-2' %>
+      <label for="switch-toggle-2"></label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit t('helpers.links.submit'), :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+               admin_wpages_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,167 @@
+en:
+  languages:
+    ar: 'العربية'
+    en: 'English'
+  activerecord:
+    attributes:
+      slider:
+        model_name: 'Slider'
+        ar_title: Title(Ar)
+        en_title: Title(En)
+        tr_title: Title(Tr)
+        en_subtitle: Subtitle(En)
+        ar_subtitle: Subtitle(Ar)
+        tr_subtitle: Subtitle(Tr)
+        attachment_id: 'Image'
+        link: 'Link'
+        ar_link_title: Link Title(Ar)
+        en_link_title: Link Title(En)
+        tr_link_title: Link Title(Tr)
+        order_position: 'Order'
+        hidden: 'Hidden'
+        created_at: Created at
+      supplier:
+        model_name: 'Sponsers'
+        id: 'ID'
+        attachment_id: 'Image'
+        link: 'Link'
+        order_position: 'Order'
+        created_at: Created at
+      client:
+        model_name: 'الزبائن'
+        id: 'معرف'
+        attachment_id: 'الصورة'
+        link: 'الرابط'
+        order_position: 'الترتيب'
+        created_at: Created at
+      website_config:
+        model_name: 'Settings'
+        ar_title: 'Title'
+        val: 'Content'
+      wpage:
+        model_name: 'Pages'
+        ar_title: Title(Ar)
+        en_title: Title(En)
+        tr_title: Title(Tr)
+        en_content: Content(En)
+        ar_content: Content(Ar)
+        tr_content: Content(Tr)
+        show_header: 'Show in header'
+        show_footer: 'Show in footer'
+        created_at: Created at
+        admin_title: 'Title'
+      post:
+        model_name: 'Posts'
+        post_type_id: 'Type'
+        post_type: Type
+        attachment_id: Image
+        ar_title: Title(Ar)
+        en_title: Title(En)
+        tr_title: Title(Tr)
+        en_subtitle: Subtitle(En)
+        ar_subtitle: Subtitle(Ar)
+        tr_subtitle: Subtitle(Tr)
+        en_content: Content(En)
+        ar_content: Content(Ar)
+        tr_content: Content(Tr)
+        created_at: Created at
+        photos: 'photos'
+        admin_title: 'Title'
+      contact_user:
+        model_name: 'Contact messages'
+        name: 'Name'
+        phone: 'Phone'
+        email: 'Email'
+        subject: 'Subject'
+        service: 'Service'
+        message: 'Message'
+        created_at: 'Sent at'
+      fa_question:
+        model_name: 'الأسئلة الشائعة'
+        ar_question: 'السؤال - عربي'
+        en_question: 'عنوان - إنكليزي'
+        tr_question: 'عنوان - تركي'
+        ar_answer: 'جواب - إنكليزي'
+        en_answer: 'جواب - عربي'
+        tr_answer: 'جواب - تركي'
+        order_position: 'الترتيب'
+        hidden: 'مخفي'
+        created_at: Created at
+      testimonial:
+        model_name: 'رأي الزبائن'
+        ar_name: 'اسم الزبون - عربي'
+        en_name: 'اسم الزبون - إنكليزي'
+        tr_name: 'اسم الزبون - تركي'
+        tr_position: 'منصب(شركة) - تركي'
+        ar_position: 'منصب(شركة) - عربي'
+        en_position: 'منصب(شركة) - إنكليزي'
+        en_text: 'محتوى - إنكليزي'
+        ar_text: 'محتوى - عربي'
+        tr_text: 'محتوى - تركي'
+        order_position: 'الترتيب'
+        created_at: Created at
+      team_member:
+        model_name: 'Team'
+        attachment_id: 'Image'
+        ar_name: Title(Ar)
+        en_name: Title(En)
+        tr_name: Title(Tr)
+        en_text: Content(En)
+        ar_text: Content(Ar)
+        tr_text: Content(Tr)
+        order_position: 'Order'
+        created_at: Created at
+      user:
+        model_name: 'المستخدمين'
+        email: 'البريد الإلكتروني'
+        password: 'كلمة المرور'
+        created_at: Created at
+    errors:
+      models:
+        post:
+          attributes:
+            post_type:
+              required: 'Required'
+  helpers:
+    actions: 'Actions'
+    links:
+      show: 'View'
+      edit: 'Edit'
+      destroy: 'Delete'
+      confirm: 'Are you sure?'
+      new: 'New'
+      cancel: 'Cancel'
+      submit: 'Save'
+      back: 'Back'
+    titles:
+      new: 'New %{model}'
+  admin:
+    logout: Logout
+    success: Success
+    sidebar:
+      title: 'Menu'
+      website_configs: 'Settings'
+      sliders: 'Sliders'
+      wpages: 'Pages'
+      posts: 'Posts'
+      contact_users: 'Contact messages'
+      faq: 'الأسئلة الشائعة'
+      suppliers: 'Sponsers'
+      clients: 'الزبائن'
+      testimonials: 'رأي الزبائن'
+      team_members: 'Team'
+      users: 'Users'
+    menu:
+      home: 'Home'
+      admin: 'Admin'
+      view_site: 'View Site'
+    login_form:
+      title: Please enter your login info
+      email_or_username: Email
+      password: Password
+      remember_me: 'Remember'
+      login_btn: 'Login'
+    post:
+      photos: 'Photos'
+    profile:
+      title: 'Profile'

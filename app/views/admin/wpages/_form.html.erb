@@ -30,7 +30,7 @@
       <div class="form-group">
         <%= f.label "#{locale.iso_code}_content", :class => 'control-label col-lg-2' %>
         <div class="col-lg-10">
-          <%= f.cktext_area "#{locale.iso_code}_content", :class => 'form-control', ckeditor: { language: 'ar', uiColor: '#F0F0F0', enterMode: 2, autoParagraph: false} %>
+          <%= f.cktext_area "#{locale.iso_code}_content", :class => 'form-control', ckeditor: { uiColor: '#F0F0F0', enterMode: 2, autoParagraph: false} %>
         </div>
       </div>
     <% end %>

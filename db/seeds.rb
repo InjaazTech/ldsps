@@ -30,7 +30,11 @@ WebsiteConfig.create(ar_title: 'Homepage Cover', en_title: 'Homepage Cover', tr_
 WebsiteConfig.create(ar_title: 'Logo title', en_title: 'Logo title(Ar)', slug: 'ar-logo-title', val: 'عنوان الموقع عربي')
 WebsiteConfig.create(ar_title: 'Logo title', en_title: 'Logo title(En)', slug: 'en-logo-title', val: 'Website title')
 
+WebsiteConfig.create(ar_title: 'Website description(Ar)', en_title: 'Website description(Ar)', slug: 'ar-description', val: 'عنوان الموقع عربي')
+WebsiteConfig.create(ar_title: 'Website description(En)', en_title: 'Website description(En)', slug: 'en-description', val: 'Website description')
 
+WebsiteConfig.create(ar_title: 'Website keywords(Ar)', en_title: 'Website keywords(Ar)', slug: 'ar-keywords', val: 'عنوان الموقع عربي')
+WebsiteConfig.create(ar_title: 'Website keywords(En)', en_title: 'Website keywords(En)', slug: 'en-keywords', val: 'Website keywords')
 
 
 

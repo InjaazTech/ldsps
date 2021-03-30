@@ -1,32 +1,36 @@
 <% if @post.present?%>
 <script type="application/ld+json">
   {
-      "@context": "https://schema.org",
-      "@type": "Apartment",
-      "name": "<%= @post.title(current_locale)%>",
-      "description": "<%= @post.content(current_locale)%>",
-      "numberOfRooms": 0,
-      "tourBookingPage": "",
-      "telephone": "<%= WebsiteConfig.get('phone', current_locale) %>",
-      "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "UK",
-          "addressLocality": "<%= @post.title(current_locale)%>",
-          "streetAddress": "<%= @post.title(current_locale)%>"
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "<%= @post.title(current_locale) %>",
+    "image": "<%= @post.image_url %>",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LDSPS",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<%= WebsiteConfig.get('logo', current_locale) %>"
       }
+    },
+    "datePublished": "<%= @post.created_at %>",
+    "dateModified": "<%= @post.updated_at %>",
+    "mainEntityOfPage": "<%= @post.path(current_locale)%>"
   }
 </script>
 <% else %>
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Homemaze",
-    "email": "info@homemaze.co.uk",
-    "description": "Realestate",
-    "image": "<%= WebsiteConfig.get('logo', current_locale) %>",
-    "priceRange": "££",
-    "telephone": "<%= WebsiteConfig.get('phone', current_locale) %>"
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Local Development & Small-Projects Support",
+    "email": "info@ldsps.org",
+    "alternateName": "LDSPS",
+    "url": "https://www.ldsps.org/",
+    "logo": "<%= WebsiteConfig.get('logo', current_locale) %>",
+    "sameAs": [
+      "https://www.facebook.com/ldspso/"
+    ]
   }
 </script>
 <% end %>

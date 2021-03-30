@@ -16,6 +16,8 @@ class WebsiteController < ApplicationController
     @contact_active = true
     WebsiteConfig.cache!
     @contact_user = ContactUser.new
+    @title = t('header.menu.contact')
+    @description = t('header.menu.contact')
   end
 
   # def send_contact
@@ -75,5 +77,6 @@ class WebsiteController < ApplicationController
     WebsiteConfig.cache!
     @title = WebsiteConfig.get('title', current_locale)
     @description = WebsiteConfig.get('description', current_locale)
+    @keywords = WebsiteConfig.get('keywords', current_locale)
   end
 end

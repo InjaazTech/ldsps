@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
   def index
     @reports_active = true
     WebsiteConfig.cache!
-    @reports = PostType.find_by(slug: 'report').posts.page(@page_index)
+    @reports = PostType.find_by(slug: 'report').posts.visible.page(@page_index)
     @title = t('header.menu.reports')
     @description = t('header.menu.reports')
   end

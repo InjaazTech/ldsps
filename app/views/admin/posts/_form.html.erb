@@ -43,6 +43,14 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <%= f.label :is_published, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10 switch">
+      <%= f.check_box :is_published, :class => 'switch-toggle switch-toggle-round', id: 'switch-toggle-1' %>
+      <label for="switch-toggle-1"></label>
+    </div>
+  </div>
+
   <% SupportLocale.all.each do |locale|%>
     <div class="form-group">
       <%= f.label "#{locale.iso_code}_title", :class => 'control-label col-lg-2' %>

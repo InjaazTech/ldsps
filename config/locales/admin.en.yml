@@ -67,6 +67,7 @@ en:
         created_at: Created at
         photos: 'photos'
         admin_title: 'Title'
+        is_published: 'Is published?'
       contact_user:
         model_name: 'Contact messages'
         name: 'Name'

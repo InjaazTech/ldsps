@@ -8,8 +8,8 @@ class WebsiteController < ApplicationController
     @team_members = TeamMember.order(order_position: :asc)
     @sponsers = Supplier.order(order_position: :asc)
     @canonical_link = "/ar" if params[:locale].blank?
-    @projects = PostType.find_by(slug: 'project').posts.limit(3)
-    @reports = PostType.find_by(slug: 'report').posts.limit(3)
+    @projects = PostType.find_by(slug: 'project').posts.visible.limit(3)
+    @reports = PostType.find_by(slug: 'report').posts.visible.limit(3)
   end
 
   def contact

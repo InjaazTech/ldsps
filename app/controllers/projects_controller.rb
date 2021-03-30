@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def index
     @projects_active = true
     WebsiteConfig.cache!
-    @projects = PostType.find_by(slug: 'project').posts.page(@page_index)
+    @projects = PostType.find_by(slug: 'project').posts.visible.page(@page_index)
     @title = t('header.menu.projects')
     @description = t('header.menu.projects')
   end

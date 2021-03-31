@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  http_basic_authenticate_with :name => ENV['AUTH_USER'], :password => ENV['AUTH_PASS']
   helper_method :current_locale
 
   def current_locale

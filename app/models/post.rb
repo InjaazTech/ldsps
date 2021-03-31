@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   has_many :post_images
   
   scope :visible, ->() {where(is_published: true).order(id: :desc)}
+  scope :homepage, ->() {visible.where(show_homepage: true).order(id: :desc)}
   scope :en_title_like, ->(keyword) { visible.where('lower(en_title) LIKE ?', "%#{keyword.try(:downcase)}%") }
   scope :ar_title_like, ->(keyword) { visible.where('lower(ar_title) LIKE ?', "%#{keyword.try(:downcase)}%") }
 
@@ -22,6 +23,14 @@ class Post < ApplicationRecord
 
   def album?
     post_type && post_type.slug == 'album'
+  end
+
+  def report?
+    post_type && post_type.slug == 'report'
+  end
+
+  def project?
+    post_type && post_type.slug == 'project'
   end
 
   def admin_title

@@ -8,7 +8,7 @@ class WebsiteController < ApplicationController
     @team_members = TeamMember.homepage
     @sponsers = Supplier.order(order_position: :asc)
     @canonical_link = "/ar" if params[:locale].blank?
-    @projects = PostType.find_by(slug: 'project').posts.visible.limit(3)
+    @projects = PostType.find_by(slug: 'project').posts.homepage.limit(3)
     @reports = PostType.find_by(slug: 'report').posts.visible.limit(3)
   end
 

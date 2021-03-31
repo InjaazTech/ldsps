@@ -68,6 +68,9 @@ en:
         photos: 'photos'
         admin_title: 'Title'
         is_published: 'Is published?'
+        is_specialized_report: 'Specialized Report?'
+        is_activity_report: 'Activity Report?'
+        show_homepage: 'Show on homepage?'
       contact_user:
         model_name: 'Contact messages'
         name: 'Name'

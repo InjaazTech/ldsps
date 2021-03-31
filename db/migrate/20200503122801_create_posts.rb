@@ -16,6 +16,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :tr_content
       t.integer :order_position, default: 0
       t.boolean :is_published, default: false
+      t.boolean :is_activity_report, default: false
+      t.boolean :is_specialized_report, default: false
+      t.boolean :show_homepage, default: false
       t.timestamps
     end
   end

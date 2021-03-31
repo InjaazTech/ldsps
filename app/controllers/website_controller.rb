@@ -5,7 +5,7 @@ class WebsiteController < ApplicationController
   def index
     @home_active = true
     WebsiteConfig.cache!
-    @team_members = TeamMember.order(order_position: :asc)
+    @team_members = TeamMember.homepage
     @sponsers = Supplier.order(order_position: :asc)
     @canonical_link = "/ar" if params[:locale].blank?
     @projects = PostType.find_by(slug: 'project').posts.visible.limit(3)
@@ -77,6 +77,12 @@ class WebsiteController < ApplicationController
     else
       @posts = current_locale == 'ar' ? Post.ar_title_like(@q).page(@page_index) : Post.en_title_like(@q).page(@page_index)
     end
+  end
+
+  def team
+    @title = t('team.title')
+    @description = @title
+    @team_members = TeamMember.order(show_homepage: :asc, order_position: :asc)
   end
 
   private

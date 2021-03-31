@@ -1,11 +1,14 @@
-<% unless @team_members.empty?%>
-<section class="section-padding section-4-bg" id="donators">
+<section class="section-padding section-2-bg mt-50">
   <div class="container">
-    <div class="heading-div-2 text-center">
-      <h2><%=t('team.mgt_team')%></h2>
+    <div class="heading-div text-center">
+      <h2><%=t('team.title')%></h2>
       <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
     </div>
-    		
+  </div>
+</section>
+<% unless @team_members.empty?%>
+<section class="section-padding" id="donators">
+  <div class="container">
     <div class="row donators-profile">
       <% @team_members.each do |team_member| %>
        <div class="col-xs-6 col-sm-6 col-md-3">
@@ -15,9 +18,6 @@
         </div>
       </div>
       <% end %>
-    </div>
-    <div class="text-center">
-      <a href="<%= team_path(current_locale)%>" class="btn btn-1"><%=t('team.show_all')%></a>	
     </div>
   </div>
 </section>

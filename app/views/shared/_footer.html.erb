@@ -16,7 +16,7 @@
         </ul>
         <div class="separator"></div>
         <div class="copyright">
-          <p><%= WebsiteConfig.get('copyright', current_locale) %></p>
+          <p><%= WebsiteConfig.get('copyright', current_locale).html_safe %></p>
         </div>
       </div>
     </div>

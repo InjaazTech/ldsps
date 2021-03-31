@@ -1,6 +1,8 @@
 class TeamMember < ApplicationRecord
   belongs_to :attachment
 
+  scope :homepage, ->() {where(show_homepage: true).order(order_position: :asc)}
+
   def image_url
     attachment.full_url
   end

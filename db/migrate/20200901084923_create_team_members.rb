@@ -9,6 +9,7 @@ class CreateTeamMembers < ActiveRecord::Migration[5.2]
       t.string :en_text, limit: 255
       t.string :tr_text, limit: 255
       t.integer :order_position, default: 0
+      t.boolean :show_homepage, default: false
       t.timestamps
     end
   end

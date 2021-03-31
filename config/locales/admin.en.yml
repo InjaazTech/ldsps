@@ -112,6 +112,7 @@ en:
         tr_text: Content(Tr)
         order_position: 'Order'
         created_at: Created at
+        show_homepage: Show on homepage?
       user:
         model_name: 'المستخدمين'
         email: 'البريد الإلكتروني'

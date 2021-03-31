@@ -40,6 +40,8 @@ en:
     title: 'Our Beloved Sponsors'
   team:
     title: 'Our Team'
+    mgt_team: 'Management Team'
+    show_all: 'All team'
   show: Show
   read_more: Read more
   about:

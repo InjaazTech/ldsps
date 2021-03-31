@@ -40,6 +40,8 @@ ar:
     title: 'الداعمين'
   team:
     title: 'فريق العمل'
+    mgt_team: 'الفريق الاداري'
+    show_all: 'فريق العمل'
   show: عرض
   read_more: المزيد
   about:

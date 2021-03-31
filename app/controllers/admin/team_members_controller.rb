@@ -70,6 +70,6 @@ class Admin::TeamMembersController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def team_member_params
-      params.require(:team_member).permit(:attachment_id, :ar_name, :tr_name, :en_name, :ar_text, :en_text, :tr_text, :order_position)
+      params.require(:team_member).permit(:attachment_id, :ar_name, :tr_name, :en_name, :ar_text, :en_text, :tr_text, :order_position, :show_homepage)
     end
 end

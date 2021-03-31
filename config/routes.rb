@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get :about, to: 'website#about'
     resources :projects, :reports, param: :slug, only: [:index, :show]
     get :search, to: 'website#search'
+    get :team, to: 'website#team'
   end
   get :admin, to: redirect('/admin/website_configs')
   namespace :admin do

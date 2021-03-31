@@ -4,8 +4,10 @@ SitemapGenerator::Sitemap.create do
   
   add '/en/contact-us', lastmod: Time.now, changefreq: "never", priority: 0.1
   add '/en/about', lastmod: Time.now, changefreq: "never", priority: 0.1
+  add '/en/team', lastmod: Time.now, changefreq: "never", priority: 0.1
   add '/ar/contact-us', lastmod: Time.now, changefreq: "never", priority: 0.1
   add '/ar/about', lastmod: Time.now, changefreq: "never", priority: 0.1
+  add '/ar/team', lastmod: Time.now, changefreq: "never", priority: 0.1
 
   PostType.find_by(slug: 'project').posts.visible.find_in_batches do |group_posts|
     group_posts.each do |post|

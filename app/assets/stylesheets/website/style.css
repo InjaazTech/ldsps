@@ -247,7 +247,6 @@ opacity: 1;
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover	{
-	background-color: none;
 	color: #fea501 !important;	
 	border-bottom: 1px dotted #fea501;
 }
@@ -357,7 +356,7 @@ opacity: 1;
 	border: 1px solid #ffffff;
 	padding: 10px;
 	color: #fff;
-}}
+}
 /*================================================ 5.BUTTON ENDS ==========================================*/
 
 /*======================================= 6.SECTION : HEADER START ========================================*/
@@ -1268,16 +1267,6 @@ select {
 }
 
 /*============================================= 17.SECTION : MEDIA QUERIES END ===============================================*/
-
-/* @media (min-width: 1025px){
-.slide{
-	min-height: 600px;
-}
-} */
-
-/* .slick-track{
-	max-width: 1905px !important;
-} */
 
 .mt-50{
 	margin-top: 50px;

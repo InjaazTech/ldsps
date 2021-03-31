@@ -13,17 +13,27 @@
                   <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_title") %>:</strong></dt>
                   <dd><%= @post.title(locale.iso_code) %></dd>
                 <% end %>
-                <dt><%= model_class.human_attribute_name(:attachment) %></dt>
+                <dt><%= model_class.human_attribute_name(:attachment_id) %></dt>
                 <dd><%= image_tag @post.image_url(:thumb), class: 'thumb' if @post.has_image? %></dd>
                 <dt><%= model_class.human_attribute_name("is_published") %>:</dt>
                 <dd><%= @post.is_published %></dd>
-                <% SupportLocale.all.each do |locale|%>
-                  <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_subtitle") %>:</strong></dt>
-                  <dd><%= @post.subtitle(locale.iso_code) %></dd>
+                <% unless @post.album? %>
+                  <% SupportLocale.all.each do |locale|%>
+                    <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_subtitle") %>:</strong></dt>
+                    <dd><%= @post.subtitle(locale.iso_code) %></dd>
+                  <% end %>
+                  <% SupportLocale.all.each do |locale|%>
+                    <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_content") %>:</strong></dt>
+                    <dd><%= @post.content(locale.iso_code) %></dd>
+                  <% end %>
                 <% end %>
-                <% SupportLocale.all.each do |locale|%>
-                  <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_content") %>:</strong></dt>
-                  <dd><%= @post.content(locale.iso_code) %></dd>
+                <% if @post.album? %>
+                <dt><strong><%= model_class.human_attribute_name(:photos) %>:</strong></dt>
+                <dd>
+                  <% @post.post_images.each do |img|%>
+                    <%= image_tag img.image_url, class: 'admin-img' %>
+                  <% end %>
+                </dd>
                 <% end %>
               </dl>
               <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -6,6 +6,7 @@ ar:
       about: 'من نحن'
       projects: 'المشاريع'
       reports: 'التقارير'
+      album: 'ألبوم'
       lang: 'English'
   contact_form:
     title: 'أرسل رسالة'
@@ -51,3 +52,5 @@ ar:
     result: 'نتائج البحث'
     submit: 'ابحث'
     placeholder: 'اكتب ...'
+  albums:
+    title: 'ألبوم الصور'

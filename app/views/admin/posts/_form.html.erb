@@ -1,7 +1,7 @@
 <%= javascript_include_tag Ckeditor.cdn_url%>
 
 <%= form_for @post, url: (@post.new_record? ? admin_posts_url : admin_post_path(@post)), :html => { :class => "form-horizontal post" } do |f| %>
-
+  <%= f.hidden_field :post_type_id %>
   <% if @post.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -17,16 +17,7 @@
     </div>
   <% end %>
   
-  <% if @post.gallery? %>
-    <%= f.hidden_field :post_type_id %>
-  <% else %>
-    <div class="form-group">
-      <%= f.label :post_type_id, :class => 'control-label col-lg-2' %>
-      <div class="col-lg-10">
-        <%= f.select :post_type_id, PostType.all.collect {|p| [ p.admin_title, p.id ] },{},{:class => 'form-control'}%>
-      </div>
-    </div>
-  <% end %>
+  
   <div class="form-group">
     <%= f.label :attachment_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -62,7 +53,7 @@
 
   
 
-  <% unless @post.gallery? %>
+  <% unless @post.album? %>
     <% SupportLocale.all.each do |locale|%>
       <div class="form-group">
         <%= f.label "#{locale.iso_code}_subtitle", :class => 'control-label col-lg-2' %>
@@ -79,6 +70,34 @@
         </div>
       </div>
     <% end %>
+  <% end %>
+
+  <% if @post.album? %>
+  <div class="form-group">
+    <div class="form-group">
+      <%= f.label t('admin.post.photos'), :class => 'control-label col-lg-2' %><spna class="red">(768x432)</spna>
+      <div class="col-lg-10">
+        <div id="fileuploaderGallery" data-max-file-count="30">Upload</div>
+      </div>
+    </div>
+    <div class="col-lg-10">
+      <table>
+        <% @post.post_images.each do |img| %>
+          <tr>
+            <td><%= image_tag img.image_url, class: 'thumb' %></td>
+            <td>
+              <%= link_to '<i class="fa fa-trash"></i>'.html_safe,
+                    admin_attachment_path(img.attachment_id, format: :json),
+                    :method => :delete,
+                    :remote => true,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-xs red remove-img' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
   <% end %>
 
   <div class="form-group">

@@ -17,7 +17,7 @@
     </div>
   <% end %>
   
-  <% if @post.gallery? %>
+  <% if @post.album? %>
     <%= f.hidden_field :post_type_id %>
   <% else %>
     <div class="form-group">
@@ -27,7 +27,7 @@
       </div>
     </div>
   <% end %>
-  <% if @post.gallery? %>
+  <% if @post.album? %>
     <div class="form-group">
       <%= f.label :attachment_id, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
@@ -62,7 +62,7 @@
       <%= f.text_field :tr_title, :class => 'form-control' %>
     </div>
   </div>
-  <% unless @post.gallery? %>
+  <% unless @post.album? %>
     <div class="form-group">
       <%= f.label :ar_subtitle, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">

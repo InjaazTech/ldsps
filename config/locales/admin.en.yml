@@ -54,7 +54,7 @@ en:
         model_name: 'Posts'
         post_type_id: 'Type'
         post_type: Type
-        attachment_id: Image
+        attachment_id: Cover
         ar_title: Title(Ar)
         en_title: Title(En)
         tr_title: Title(Tr)

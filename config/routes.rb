@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'contact-us', to: 'website#contact'
     post :send_contact, to: 'website#send_contact'
     get :about, to: 'website#about'
-    resources :projects, :reports, param: :slug, only: [:index, :show]
+    resources :projects, :reports, :albums, param: :slug, only: [:index, :show]
     get :search, to: 'website#search'
     get :team, to: 'website#team'
   end

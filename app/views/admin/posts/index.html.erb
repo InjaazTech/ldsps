@@ -9,7 +9,9 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6 text-nowrap">
-                  <%= link_to t('.new', :default => t("helpers.links.new")),new_admin_post_path,:class => 'btn btn-primary' %>
+                  <%= link_to 'New project',new_admin_post_path(type: 'project'),:class => 'btn btn-primary' %>
+                  <%= link_to 'New report',new_admin_post_path(type: 'report'),:class => 'btn btn-primary' %>
+                  <%= link_to 'New album',new_admin_post_path(type: 'album'),:class => 'btn btn-primary' %>
                 </div>
                 <div class="col-md-6">
                   <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><form method="GET" action="<%= admin_posts_path %>"><input name="q" value="<%= @q %>" type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></form></label></div>

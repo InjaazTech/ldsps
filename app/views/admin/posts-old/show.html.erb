@@ -10,7 +10,7 @@
   <dd><%= @post.en_title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tr_title) %>:</strong></dt>
   <dd><%= @post.tr_title %></dd>
-  <% if @post.gallery?%>
+  <% if @post.album?%>
     <% @post.post_images.each do |post_image|%>
       <%= image_tag post_image.image_url, width: '200px' %>
     <% end %>

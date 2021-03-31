@@ -39,6 +39,11 @@
               <%= t('header.menu.contact') %>
             </a>
           </li>
+          <li class="menu <%= 'active' if @album_active%>">
+            <a href="<%= albums_path(current_locale) %>" class="pagescroll">
+              <%= t('header.menu.album') %>
+            </a>
+          </li>
           <li class="menu">
             <a href="<%= arabic? ? '/en' : '/ar' %>" class="pagescroll">
               <%= t('header.menu.lang') %>

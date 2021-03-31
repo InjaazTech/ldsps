@@ -6,6 +6,7 @@ en:
       about: 'about'
       projects: 'projects'
       reports: 'reports'
+      album: 'Gallery'
       lang: 'العربية'
   contact_form:
     title: 'Send us an email'
@@ -52,3 +53,5 @@ en:
     no_result: 'No result found'
     submit: 'Search'
     placeholder: 'Please type ...'
+  albums:
+    title: 'Albums'

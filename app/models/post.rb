@@ -20,8 +20,8 @@ class Post < ApplicationRecord
     attachment_id.present?
   end
 
-  def gallery?
-    post_type && post_type.slug == 'gallery'
+  def album?
+    post_type && post_type.slug == 'album'
   end
 
   def admin_title

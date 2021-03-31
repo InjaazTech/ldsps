@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(email: 'zhazeem@gmail.com', password: '12345678')
+User.create(email: 'admin@ldsps.org', password: '32145678')
 SupportLocale.create(ar_title: 'عربية', en_title: 'Arabic', iso_code: 'ar')
 SupportLocale.create(ar_title: 'انكليزية', en_title: 'English', iso_code: 'en')
 

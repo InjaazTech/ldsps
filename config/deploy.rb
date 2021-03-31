@@ -1,6 +1,6 @@
-set :application, 'xxxx'
+set :application, 'ldsps'
 
-set :repo_url, 'git@github.com:zhazeem/xxxx.git'
+set :repo_url, 'git@github.com:zhazeem/ldsps.git'
 
 # Default value for :scm is :git
 # set :scm, :git

@@ -4,17 +4,17 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-host = '165.22.125.60'
-user = 'rails'
+host = '161.97.68.94'
+user = 'deployer'
 
 roles = "#{user}@#{host}"
 
-set :branch, 'master'
+set :branch, 'main'
 set :stage, :production
 set :rails_env, :production
 
 set :deploy_user, user
-set :deploy_to, '/var/www/xxxx'
+set :deploy_to, '/var/www/ldsps'
 
 # put this value Settings.deploy.user in config/settings.local.yml, add the file if it doesn't exist
 
@@ -31,8 +31,8 @@ set :config_files, %w(
 )
 
 # Puma
-set :puma_threads,    [4, 16]
-set :puma_workers,    2
+set :puma_threads,    [6, 16]
+set :puma_workers,    6
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"

@@ -21,12 +21,6 @@
                   <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_subtitle") %>:</strong></dt>
                   <dd><%= @post.subtitle(locale.iso_code) %></dd>
                 <% end %>
-                <dt><strong><%= model_class.human_attribute_name(:photos) %>:</strong></dt>
-                <dd>
-                  <% @post.post_images.each do |img|%>
-                    <%= image_tag img.image_url, class: 'admin-img' %>
-                  <% end %>
-                </dd>
                 <% SupportLocale.all.each do |locale|%>
                   <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_content") %>:</strong></dt>
                   <dd><%= @post.content(locale.iso_code) %></dd>

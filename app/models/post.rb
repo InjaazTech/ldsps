@@ -61,11 +61,11 @@ class Post < ApplicationRecord
   def set_slug
     if ar_title.present? && ar_slug.blank?
       clean_ar_title = ar_title.to_s.downcase.strip.gsub(/\s+/, "-").gsub( /[^a-zA-Z0-9أ-ي-]*/ , "")
-      self.ar_slug = clean_ar_title
+      self.ar_slug = "#{id}-#{clean_ar_title}"
     end
     if en_title.present? && en_slug.blank?
       clean_en_title = en_title.to_s.downcase.strip.parameterize
-      self.en_slug = clean_en_title
+      self.en_slug = "#{id}-#{clean_en_title}"
     end
   end
 end

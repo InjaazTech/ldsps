@@ -12,7 +12,8 @@ class AlbumsController < ApplicationController
   def show
     @album_active = true
     WebsiteConfig.cache!
-    @post = PostType.find_by(slug: 'album').posts.where("#{current_locale}_slug = ?", params[:slug]).first
+    id = params[:slug].split('-').first
+    @post = Post.find(id)
     @title = @post.title(current_locale)
     @description = @title
     @keywords = @title.split(' ').join(',')

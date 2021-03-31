@@ -12,7 +12,8 @@ class ReportsController < ApplicationController
   def show
     @reports_active = true
     WebsiteConfig.cache!
-    @post = PostType.find_by(slug: 'report').posts.where("#{current_locale}_slug = ?", params[:slug]).first
+    id = params[:slug].split('-').first
+    @post = Post.find(id)
     @title = @post.title(current_locale)
     @description = Nokogiri::HTML(@post.content(current_locale)).text.strip
     @keywords = @title.split(' ').join(',')

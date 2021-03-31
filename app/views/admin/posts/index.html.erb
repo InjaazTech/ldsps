@@ -31,7 +31,7 @@
                     <tbody>
                       <% @posts.each do |post| %>
                       <tr>
-                        <td><%= post.post_type.admin_title %></td>
+                        <td><%= post.post_type.admin_title.capitalize %></td>
                         <td><%= post.admin_title %></td>
                         <td><%= image_tag post.image_url(:full), class: 'thumb' if post.has_image?%></td>
                         <td><%= short_datetime(post.created_at) %></td>

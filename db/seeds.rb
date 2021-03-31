@@ -35,6 +35,7 @@ WebsiteConfig.create(ar_title: 'Website description(En)', en_title: 'Website des
 
 WebsiteConfig.create(ar_title: 'Website keywords(Ar)', en_title: 'Website keywords(Ar)', slug: 'ar-keywords', val: 'عنوان الموقع عربي')
 WebsiteConfig.create(ar_title: 'Website keywords(En)', en_title: 'Website keywords(En)', slug: 'en-keywords', val: 'Website keywords')
+WebsiteConfig.create(ar_title: 'instagram', en_title: 'instagram', tr_title: 'instagram', slug: 'instagram', val: 'http://instagram.com/@page')
 
 
 

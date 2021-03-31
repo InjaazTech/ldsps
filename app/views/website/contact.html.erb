@@ -19,7 +19,6 @@
 				<div class="row">
 					<input class="name col-xs-12 col-sm-12" type="text" name="name" placeholder="<%= t('contact_form.name')%>" required autocomplete="off">
 					<input class="email col-xs-12 col-sm-12" type="email" name="email" placeholder="<%= t('contact_form.email')%>" required autocomplete="off">
-					<input class="phoneno col-xs-12 col-sm-12" type="text" name="phone" placeholder="<%= t('contact_form.phone')%>" autocomplete="off">
 					<input class="phoneno col-xs-12 col-sm-12" type="text" name="subject" placeholder="<%= t('contact_form.subject')%>" required autocomplete="off">
 					<%= f.text_area :message, :class => 'col-xs-12 col-sm-12', id: "template-contactform-message", rows: "6", cols: "30", placeholder: t('contact_form.message') %>	
 				</div>

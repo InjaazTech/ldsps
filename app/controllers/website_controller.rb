@@ -36,13 +36,13 @@ class WebsiteController < ApplicationController
     # @contact_user = ContactUser.new(contact_user_params)
     if false && @contact_user.save
       mg_client = Mailgun::Client.new ENV['SMTP_API_KEY'], 'api.eu.mailgun.net'
-      html_content = "<p>Name: #{contact_user_params[:name]}<p> <p>Email: #{contact_user_params[:email]}</p> <p>Phone: #{contact_user_params[:phone]}</p> <p>Message: #{contact_user_params[:message]}</p>"
+      html_content = "<p>Name: #{contact_user_params[:name]}<p> <p>Email: #{contact_user_params[:email]}</p> <p>Message: #{contact_user_params[:message]}</p>"
       message_params =  { from: "#{contact_user_params[:name]}<#{contact_user_params[:email]}>",
-                          to:   'info@domain.com',
+                          to:   'info@ldsps.org',
                           subject: "New contact from website",
                           html: html_content
                         }
-      mg_client.send_message 'domain.com', message_params
+      mg_client.send_message 'ldsps.org', message_params
       flash[:success] = t('contact_form.send_success')
     else
       flash[:danger] = t('contact_form.send_failed')

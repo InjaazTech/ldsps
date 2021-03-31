@@ -2,7 +2,7 @@ body,h1,h2,h3,h4,h5,a,p{
   font-family: 'Noto Kufi Arabic', sans-serif !important;
 }
 
-.navbar-right{
+.navbar-right, .navbar-toggle{
   float: left !important;
 }
 
@@ -14,6 +14,13 @@ body,h1,h2,h3,h4,h5,a,p{
   padding-right: 0;
 }
 
+@media (min-width: 1025px){
 .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9{
   float: right !important;
+}
+}
+
+.navbar-toggle{
+  margin-left: 15px;
+  margin-right: 0;
 }

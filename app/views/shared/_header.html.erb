@@ -44,9 +44,18 @@
               <%= t('header.menu.lang') %>
             </a>
           </li>
+          <li>
+            <a href="#" id="search"><i class="fa fa-search"></i></a>
+          </li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
     </div>
   </nav>
+  <div class="search popup-form">
+    <form method="GET" action="<%= search_path(current_locale)%>">
+      <input type="text" name="q" id="q" value="<%=@q%>" placeholder="<%=t('search.placeholder')%>">
+      <button type="submit" class="donate-bg"><%=t('search.submit')%></button>
+    </form>
+  </div>
 </header>

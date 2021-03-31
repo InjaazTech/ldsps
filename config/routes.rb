@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post :send_contact, to: 'website#send_contact'
     get :about, to: 'website#about'
     resources :projects, :reports, param: :slug, only: [:index, :show]
+    get :search, to: 'website#search'
   end
   get :admin, to: redirect('/admin/website_configs')
   namespace :admin do

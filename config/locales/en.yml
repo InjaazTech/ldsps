@@ -44,3 +44,9 @@ en:
   read_more: Read more
   about:
     title: 'About us'
+  search:
+    title: 'Search'
+    result: 'Search result'
+    no_result: 'No result found'
+    submit: 'Search'
+    placeholder: 'Please type ...'

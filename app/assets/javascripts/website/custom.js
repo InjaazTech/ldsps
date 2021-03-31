@@ -201,26 +201,15 @@
 			// validate signup form on keyup and submit
 		$("#popup-form").validate({
 		});
+		
+		$('a#search').on('click', function(e){
+			e.preventDefault();
+			$('.search').toggle();
+			$('#q').focus();
+		});
 
-		// Slick Slider - Main Slider
-		var isLTR = location.href.includes("/en");
-    $('.big-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        dots: false,
-        arrows: false,
-        fade: true,
-        adaptiveHeight: true,
-        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
-        nextArrow: '<i class="next-arrow fas fa-chevron-right"></i>',
-        prevArrow: '<i class="prev-arrow fas fa-chevron-left"></i>',
-        rtl: !isLTR
-    });
-
-    $('.big-slider').slickAnimation();
-			
+		$('.carousel').carousel({interval: 2000});
+		
 		return false;
 		// End of use strict
 	});

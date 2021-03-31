@@ -44,3 +44,8 @@ ar:
   read_more: المزيد
   about:
     title: 'من نحن'
+  search:
+    title: 'البحث'
+    result: 'نتائج البحث'
+    submit: 'ابحث'
+    placeholder: 'اكتب ...'

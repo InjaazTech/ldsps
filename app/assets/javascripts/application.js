@@ -15,6 +15,4 @@
 //= require website/bootstrap.min
 //= require website/jquery.validate.min
 //= require website/jquery.popupoverlay
-//= require website/slick.min
-//= require website/slick-animation.min
 //= require website/custom

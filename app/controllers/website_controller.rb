@@ -68,6 +68,17 @@ class WebsiteController < ApplicationController
     @description = t('header.menu.about')
   end
 
+  def search
+    @q = params[:q]
+    @title = "#{t('search.result')}: #{@q}"
+    @description = @title
+    if @q.blank?
+      @posts = []
+    else
+      @posts = current_locale == 'ar' ? Post.ar_title_like(@q).page(@page_index) : Post.en_title_like(@q).page(@page_index)
+    end
+  end
+
   private
   def contact_user_params
     params.require(:contact_user).permit(:name, :email, :phone, :service, :subject, :message)

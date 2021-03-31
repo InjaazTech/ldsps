@@ -1,0 +1,34 @@
+<section class="section-padding section-2-bg mt-50">
+  <div class="container">
+    <div class="heading-div text-center">
+      <h2><%= @title %></h2>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div>
+  </div>
+</section>
+<section class="section-padding section-1-bg">
+  <div class="container">
+    <div class="row">
+      <% if @posts.empty?%>
+      <div class="col-sm-4 camps-done-col">
+        <%=t('search.no_result')%>
+      </div>
+      <% else %>
+        <% @posts.each do |post| %>
+        <div class="col-sm-4 camps-done-col">
+          <img
+            src="<%= post.image_url %>"
+            alt="<%= post.title(current_locale) %>"
+            class="img-responsive"
+          />
+          <h3><%= post.title(current_locale) %></h3>
+          <p>
+            <%= post.subtitle(current_locale) %>
+          </p>
+          <a href="<%= post.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>

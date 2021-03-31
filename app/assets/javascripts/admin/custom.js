@@ -18,11 +18,11 @@ $(document).ready(function () {
 				$('#attachment_url').val(data.attachment.upload.url);
 			}
 		},
-		dragDropStr: 'اسحب وارفع',
-		uploadStr: 'اختر صورة',
-		doneStr: 'تم',
-		extErrorStr: 'صيغة الملف غير مقبولة',
-		sizeErrorStr: 'حجم الملف كبير',
+		dragDropStr: 'Drag and drop',
+		uploadStr: 'Select an image',
+		doneStr: 'Done',
+		extErrorStr: 'Exentions is not supported',
+		sizeErrorStr: 'Too big file'
 	});
 
 	$('.remove-img').on('ajax:success', function(e, data, status, xhr){
@@ -44,11 +44,11 @@ $(document).ready(function () {
 		onSuccess: function (files, data, xhr) {
       $('form.post').append('<input type="hidden" name="attachments_ids[]" value="'+data.attachment.id+'" />');
 		},
-		dragDropStr: 'اسحب وارفع',
-		uploadStr: 'اختر صورة',
-		doneStr: 'تم',
-		extErrorStr: 'صيغة الملف غير مقبولة',
-		sizeErrorStr: 'حجم الملف كبير',
+		dragDropStr: 'Drag and drop',
+		uploadStr: 'Select an image',
+		doneStr: 'Done',
+		extErrorStr: 'Exentions is not supported',
+		sizeErrorStr: 'Too big file',
 		returnType: 'json'
     });
 });

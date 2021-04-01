@@ -4,9 +4,19 @@ class ReportsController < ApplicationController
   def index
     @reports_active = true
     WebsiteConfig.cache!
-    @reports = PostType.find_by(slug: 'report').posts.visible.page(@page_index)
-    @title = t('header.menu.reports')
-    @description = t('header.menu.reports')
+    @s = params[:s]
+    @posts = []
+    case @s
+    when 'specialized'
+      @title = t('reports.specialized')
+      @posts = PostType.find_by(slug: 'report').posts.visible.where(is_specialized_report: true).page(@page_index)
+    when 'activity'
+      @title = t('reports.activity')
+      @posts = PostType.find_by(slug: 'report').posts.visible.where(is_activity_report: true).page(@page_index)
+    else
+      @posts = PostType.find_by(slug: 'report').posts.visible.page(@page_index)
+    end
+    @description = @title
   end
 
   def show

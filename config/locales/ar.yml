@@ -37,6 +37,8 @@ ar:
   reports:
     title: 'تقارير'
     all: 'كل التقارير'
+    activity: 'تقارير النشاطات'
+    specialized: 'تقارير خاصة'
   sponsers:
     title: 'الداعمين'
   team:
@@ -44,7 +46,7 @@ ar:
     mgt_team: 'الفريق الاداري'
     show_all: 'فريق العمل'
   show: عرض
-  read_more: المزيد
+  read_more: 'اقرأ المزيد...'
   about:
     title: 'من نحن'
   search:

@@ -12,11 +12,12 @@
         <div class="donators-profile-col text-center">
           <img src="<%= team_member.image_url %>" alt="<%= team_member.name(current_locale) %>" />
           <p><%= team_member.name(current_locale) %></p>
+          <p><%= team_member.text(current_locale) %></p>
         </div>
       </div>
       <% end %>
     </div>
-    <div class="text-center">
+    <div class="text-center pt-20">
       <a href="<%= team_path(current_locale)%>" class="btn btn-1"><%=t('team.show_all')%></a>	
     </div>
   </div>

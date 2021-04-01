@@ -8,23 +8,31 @@
 </section>
 <section class="section-padding section-1-bg">
   <div class="container">
-    <div class="row">
-      <% @reports.each do |report| %>
-      <div class="col-sm-4 camps-done-col">
-        <img
-          src="<%= report.image_url %>"
-          alt="<%= report.title(current_locale) %>"
-          class="img-responsive"
-        />
-        <h3><%= report.title(current_locale) %></h3>
-        <p>
-          <%= report.subtitle(current_locale) %>
-        </p>
-        <a href="<%= report.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
-      </div>
+    <% @posts.each_slice(3) do |row| %>
+      <div class="row pt-20">
+      <% row.each do |post| %>
+          <div class="col-sm-4 camps-done-col">
+            <img
+              src="<%= post.image_url %>"
+              alt="<%= post.title(current_locale) %>"
+              class="img-responsive"
+            />
+            <h3><%= post.title(current_locale) %></h3>
+            <p>
+              <%= post.subtitle(current_locale) %>
+            </p>
+            <a href="<%= post.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
+            <br/>
+          </div>
       <% end %>
     </div>
-    <div class="heading-div text-center">
-    </div>
+    <% end %>
   </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row text-center">
+      <%= paginate @posts %>
+      </div>
+      </div>
 </section>

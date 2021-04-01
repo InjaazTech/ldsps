@@ -37,6 +37,8 @@ en:
   reports:
     title: 'Our reports'
     all: 'Our all reports'
+    activity: 'Activity Reports'
+    specialized: 'Specialized Reports'
   sponsers:
     title: 'Our Beloved Sponsors'
   team:

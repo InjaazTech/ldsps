@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  paginates_per 16
+  paginates_per 12
   #validates :post_type_id, :attachment_id, :remote_id, :price, :en_title, presence: true
 
   belongs_to :post_type
@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   scope :en_title_like, ->(keyword) { visible.where('lower(en_title) LIKE ?', "%#{keyword.try(:downcase)}%") }
   scope :ar_title_like, ->(keyword) { visible.where('lower(ar_title) LIKE ?', "%#{keyword.try(:downcase)}%") }
 
-  before_create :set_slug
+  after_create :set_slug
 
   def image_url(size = :full)
     attachment.full_url(size)

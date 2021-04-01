@@ -3,13 +3,19 @@ class Admin::AttachmentsController < Admin::BaseController
     before_action :set_attachment, only: [:destroy]
   
     def index
+      @attachments = Attachment.where(is_general: true).page(@page_index)
     end
-  
+    
+    def new
+      @attachment = Attachment.new
+    end
+
     # POST /attachments
     # POST /attachments.json
     def create
-      @attachment = current_user.attachments.new(upload: params[:upload])
-  
+      is_general = params[:is_general] || false
+      @attachment = current_user.attachments.new(is_general: is_general, upload: params[:upload])
+
       respond_to do |format|
         if @attachment.save
           format.json { render json: {attachment: @attachment} }

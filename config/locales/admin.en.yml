@@ -4,6 +4,8 @@ en:
     en: 'English'
   activerecord:
     attributes:
+      attachment:
+        model_name: 'Aattchments'
       slider:
         model_name: 'Slider'
         ar_title: Title(Ar)
@@ -156,6 +158,7 @@ en:
       testimonials: 'رأي الزبائن'
       team_members: 'Team'
       users: 'Users'
+      files_lib: 'Files Library'
     menu:
       home: 'Home'
       admin: 'Admin'

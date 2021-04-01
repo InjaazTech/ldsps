@@ -50,5 +50,25 @@ $(document).ready(function () {
 		extErrorStr: 'Exentions is not supported',
 		sizeErrorStr: 'Too big file',
 		returnType: 'json'
-    });
+		});
+		
+		var elem = $("#libfileuploader");
+		elem.uploadFile({
+			url: "/admin/attachments.json",
+			fileName: "upload",
+			acceptFiles: "*",
+			maxFileCount: 1,
+			showPreview: true,
+			previewWidth: '100px',
+			maxFileSize: 50*1024*1024,
+			formData: {is_general: true},
+			onSuccess: function (files, data, xhr) {
+				window.location = '/admin/attachments';
+			},
+			dragDropStr: 'Drag and drop',
+			uploadStr: 'Select a file',
+			doneStr: 'Done',
+			extErrorStr: 'Exentions is not supported',
+			sizeErrorStr: 'Too big file'
+		});
 });

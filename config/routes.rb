@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :website_configs, only: [:index, :edit, :update]
     resources :wpages
     resources :sliders
-    resources :attachments, only: [:create, :destroy]
+    resources :attachments, only: [:index, :new, :create, :destroy]
     resources :posts
     resources :contact_users, only: [:index, :destroy]
     resources :fa_questions

@@ -10,6 +10,8 @@
   <div class="container">
     <div class="row">					
       <div class="col-sm-6 blog-img">
+        <img src="<%= @post.image_url %>" alt="<%= @post.title(current_locale)%>" />
+        <br/><br/>
         <%= @post.content(current_locale) %>
 			</div>
 		</div>

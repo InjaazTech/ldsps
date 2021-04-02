@@ -43,5 +43,6 @@
     <%= render 'shared/footer'%>
     <div id="fade"></div>
     <%= javascript_include_tag 'application' %>
+    <%= render 'shared/ga' if Rails.env.production?%>
   </body>
 </html>

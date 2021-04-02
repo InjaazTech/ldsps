@@ -32,13 +32,13 @@ class WebsiteController < ApplicationController
   # end
 
   def send_contact
-    # return unless NewGoogleRecaptcha.human?(params[:new_google_recaptcha_token], "contact")
-    # @contact_user = ContactUser.new(contact_user_params)
-    if false && @contact_user.save
+    return unless NewGoogleRecaptcha.human?(params[:new_google_recaptcha_token], "contact")
+    @contact_user = ContactUser.new(contact_user_params)
+    if @contact_user.save
       mg_client = Mailgun::Client.new ENV['SMTP_API_KEY'], 'api.eu.mailgun.net'
       html_content = "<p>Name: #{contact_user_params[:name]}<p> <p>Email: #{contact_user_params[:email]}</p> <p>Message: #{contact_user_params[:message]}</p>"
       message_params =  { from: "#{contact_user_params[:name]}<#{contact_user_params[:email]}>",
-                          to:   'info@ldsps.org',
+                          to:   'zhazeem@gmail.com',
                           subject: "New contact from website",
                           html: html_content
                         }

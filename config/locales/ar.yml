@@ -21,6 +21,7 @@ ar:
     address: 'العنوان'
     speak: 'اتصل بنا'
     send_failed: 'فشلت العملية للأسف'
+    send_success: 'تم ارسال الرسالة بنجاح'
   block1:
     title: 'نص هنا'
     subtitle1: 'نص هنا'

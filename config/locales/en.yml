@@ -21,6 +21,7 @@ en:
     address: 'Address'
     speak: 'Speak to us'
     send_failed: 'Failed to send your message'
+    send_success: 'The message has been sent successfully'
   block1:
     title: 'Moving with'
     subtitle1: 'subtitle1'

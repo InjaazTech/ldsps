@@ -4,16 +4,18 @@
     <div class="heading-div text-center">
       <h2><%=t('sponsers.title')%></h2>
       <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
-    </div> 
-    <div class="row sponsors-row">
-      <% @sponsers.each do |sponser| %>
-      <div class="col-xs-6 col-sm-4 col-md-2 sponsors-space-1 pt-20">
-        <a href="<%= sponser.pretty_link%>">
-        <img src="<%= sponser.image_url %>" alt="180x120x1" class="img-responsive"/>
-        </a>	
+    </div>
+    <% @sponsers.each_slice(6) do |row| %>
+      <div class="row sponsors-row">
+        <% row.each do |sponser| %>
+        <div class="col-xs-6 col-sm-4 col-md-2 sponsors-space-1 pt-20">
+          <a href="<%= sponser.pretty_link%>">
+          <img src="<%= sponser.image_url %>" alt="180x120x1" class="img-responsive"/>
+          </a>	
+        </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>	
+    <% end %>
   </div>			
 </section>
 <% end %>

@@ -9,16 +9,18 @@
 <% unless @team_members.empty?%>
 <section class="section-padding" id="donators">
   <div class="container">
-    <div class="row donators-profile">
-      <% @team_members.each do |team_member| %>
-       <div class="col-xs-6 col-sm-6 col-md-3">
-        <div class="donators-profile-col text-center">
-          <img src="<%= team_member.image_url %>" alt="<%= team_member.name(current_locale) %>" />
-          <p><%= team_member.name(current_locale) %></p>
+    <% @team_members.each_slice(4) do |row| %>
+      <div class="row donators-profile">
+        <% row.each do |team_member| %>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+          <div class="donators-profile-col text-center">
+            <img src="<%= team_member.image_url %>" alt="<%= team_member.name(current_locale) %>" />
+            <p><%= team_member.name(current_locale) %></p>
+          </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </section>
 <% end %>

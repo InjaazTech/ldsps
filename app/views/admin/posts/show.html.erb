@@ -17,6 +17,10 @@
                 <dd><%= image_tag @post.image_url(:thumb), class: 'thumb' if @post.has_image? %></dd>
                 <dt><%= model_class.human_attribute_name("is_published") %>:</dt>
                 <dd><%= @post.is_published %></dd>
+                <% if @post.project?%>
+                  <dt><strong><%= model_class.human_attribute_name(:custom_date) %>:</strong></dt>
+                  <dd><%= @post.custom_date %></dd>
+                <% end %>
                 <% unless @post.album? %>
                   <% SupportLocale.all.each do |locale|%>
                     <dt><strong><%= model_class.human_attribute_name("#{locale.iso_code}_subtitle") %>:</strong></dt>

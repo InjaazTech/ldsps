@@ -59,6 +59,7 @@ class Post < ApplicationRecord
 
   private
   def set_slug
+    attrs = {}
     if ar_title.present? && ar_slug.blank?
       clean_ar_title = ar_title.to_s.downcase.strip.gsub(/\s+/, "-").gsub( /[^a-zA-Z0-9أ-ي-]*/ , "")
       attrs[:ar_slug] = "#{id}-#{clean_ar_title}"

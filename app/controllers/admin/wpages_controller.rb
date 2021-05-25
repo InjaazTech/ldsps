@@ -70,6 +70,6 @@ class Admin::WpagesController < Admin::BaseController
   
       # Only allow a list of trusted parameters through.
       def wpage_params
-        params.require(:wpage).permit(:ar_title, :en_title, :tr_title, :ar_content, :en_content, :tr_content, :show_header, :show_footer)
+        params.require(:wpage).permit(:ar_title, :en_title, :tr_title, :ar_subtitle, :en_subtitle, :tr_subtitle, :ar_content, :en_content, :tr_content, :show_header, :show_footer)
       end
   end

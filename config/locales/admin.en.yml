@@ -45,6 +45,9 @@ en:
         ar_title: Title(Ar)
         en_title: Title(En)
         tr_title: Title(Tr)
+        ar_subtitle: SubTitle(Ar)
+        en_subtitle: SubTitle(En)
+        tr_subtitle: SubTitle(Tr)
         en_content: Content(En)
         ar_content: Content(Ar)
         tr_content: Content(Tr)
@@ -70,9 +73,10 @@ en:
         photos: 'photos'
         admin_title: 'Title'
         is_published: 'Is published?'
-        is_specialized_report: 'Specialized Report?'
+        is_specialized_report: 'Yearly Report?'
         is_activity_report: 'Activity Report?'
         show_homepage: 'Show on homepage?'
+        custom_date: 'Date'
       contact_user:
         model_name: 'Contact messages'
         name: 'Name'

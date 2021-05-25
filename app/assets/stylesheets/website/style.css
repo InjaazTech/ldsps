@@ -1313,3 +1313,11 @@ select {
 .progress-bar-inner-100 {	
 	width:100%;
 }
+
+.donators-profile-col img{
+max-width: 150px;
+}
+
+.sponsors-space-1 img{
+	max-width: 165px !important;
+}

@@ -3,8 +3,12 @@ class TeamMember < ApplicationRecord
 
   scope :homepage, ->() {where(show_homepage: true).order(order_position: :asc)}
 
-  def image_url
-    attachment.full_url
+  def has_image?
+    attachment_id.present?
+  end
+
+  def image_url(size = :full)
+    attachment.full_url(size)
   end
   
   def name(locale = 'ar')

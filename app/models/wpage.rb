@@ -8,6 +8,10 @@ class Wpage < ApplicationRecord
     read_attribute("#{locale}_title")
   end
 
+  def subtitle(locale)
+    read_attribute("#{locale}_subtitle")
+  end
+
   def content(locale)
     read_attribute("#{locale}_content").to_s.html_safe
   end

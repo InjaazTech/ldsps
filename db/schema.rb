@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_084923) do
+ActiveRecord::Schema.define(version: 2021_05_25_121251) do
 
   create_table "attachments", charset: "utf8", force: :cascade do |t|
     t.string "upload"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_084923) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_general", default: false
     t.index ["user_id"], name: "index_attachments_on_user_id"
   end
 
@@ -102,6 +103,10 @@ ActiveRecord::Schema.define(version: 2020_09_01_084923) do
     t.boolean "is_published", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_activity_report", default: false
+    t.boolean "is_specialized_report", default: false
+    t.boolean "show_homepage", default: false
+    t.date "custom_date"
     t.index ["ar_slug"], name: "index_posts_on_ar_slug"
     t.index ["attachment_id"], name: "index_posts_on_attachment_id"
     t.index ["en_slug"], name: "index_posts_on_en_slug"
@@ -158,6 +163,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_084923) do
     t.integer "order_position", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "show_homepage", default: false
     t.index ["attachment_id"], name: "index_team_members_on_attachment_id"
   end
 
@@ -218,6 +224,9 @@ ActiveRecord::Schema.define(version: 2020_09_01_084923) do
     t.boolean "show_footer", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ar_subtitle"
+    t.string "en_subtitle"
+    t.string "tr_subtitle"
     t.index ["ar_slug"], name: "index_wpages_on_ar_slug"
     t.index ["en_slug"], name: "index_wpages_on_en_slug"
     t.index ["tr_slug"], name: "index_wpages_on_tr_slug"

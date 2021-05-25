@@ -62,11 +62,21 @@
         </div>
       </div>
     <% end %>
+
+    <% if @post.project?%>
+      <div class="form-group">
+        <%= f.label :custom_date, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+          <%= f.text_field :custom_date, :class => 'form-control', placeholder: 'yyyy-mm-dd' %>
+        </div>
+      </div>
+    <% end %>
+
     <% SupportLocale.all.each do |locale|%>
       <div class="form-group">
         <%= f.label "#{locale.iso_code}_content", :class => 'control-label col-lg-2' %>
         <div class="col-lg-10">
-          <%= f.cktext_area "#{locale.iso_code}_content", :class => 'form-control', ckeditor: { uiColor: '#F0F0F0', enterMode: 2, autoParagraph: false} %>
+          <%= f.cktext_area "#{locale.iso_code}_content", :class => 'form-control', ckeditor: { language: "#{locale.iso_code}_content", uiColor: '#F0F0F0', enterMode: 2, autoParagraph: false} %>
         </div>
       </div>
     <% end %>

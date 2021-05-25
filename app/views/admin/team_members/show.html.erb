@@ -9,6 +9,8 @@
         <div class="card-body">
             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
               <dl class="dl-horizontal">
+                <dt><%= model_class.human_attribute_name(:attachment_id) %></dt>
+                <dd><%= image_tag @team_member.image_url(:thumb), class: 'thumb' if @team_member.has_image? %></dd>
                 <dt><strong><%= model_class.human_attribute_name(:ar_name) %>:</strong></dt>
                 <dd><%= @team_member.ar_name %></dd>
                 <dt><strong><%= model_class.human_attribute_name(:en_name) %>:</strong></dt>

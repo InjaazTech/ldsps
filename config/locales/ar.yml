@@ -54,6 +54,7 @@ ar:
     specialized: 'تقارير سنوية'
   sponsers:
     title: 'شركاؤنا'
+    all: 'جميع الشركاء'
   team:
     title: 'فريق العمل'
     mgt_team: 'الفريق الاداري'

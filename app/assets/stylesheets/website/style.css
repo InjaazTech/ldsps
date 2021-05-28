@@ -298,7 +298,7 @@ opacity: 1;
 }
 
 .navbar-nav {
-	padding-top:21px;
+	padding-top:41px;
 }
 
 .logo-image {
@@ -1274,7 +1274,7 @@ select {
 }
 
 .logo{
-	max-height: 50px;
+	max-height: 100px;
 }
 
 .search{
@@ -1320,4 +1320,25 @@ max-width: 150px;
 
 .sponsors-space-1 img{
 	max-width: 165px !important;
+}
+
+@media only screen and (max-width: 600px){
+	.logo-image a{
+		font-size: 12px;
+	}
+	.logo{
+		max-height: 50px;
+	}
+
+	.navbar-nav {
+		padding-top:21px;
+	}
+}
+
+.team-text{
+color: #666666 !important;
+}
+
+.heading-div{
+	padding-top: 50px;
 }

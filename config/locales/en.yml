@@ -42,6 +42,7 @@ en:
     specialized: 'Specialized Reports'
   sponsers:
     title: 'Our Beloved Sponsors'
+    all: 'All Sponsors'
   team:
     title: 'Our Team'
     mgt_team: 'Management Team'

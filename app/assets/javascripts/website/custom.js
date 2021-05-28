@@ -208,7 +208,7 @@
 			$('#q').focus();
 		});
 
-		$('.carousel').carousel({interval: 2000});
+		$('.carousel').carousel({interval: 4000});
 		
 		return false;
 		// End of use strict

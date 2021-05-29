@@ -1,35 +1,51 @@
-<section class="section-padding section-1-bg">
+<section class="section-padding section-2-bg">
   <div class="container">
     <div class="heading-div text-center">
       <h2><%=t('block2.title')%></h2>
       <h4><%=t('block2.subtitle')%></h4>
       <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
     </div>
-    <div class="row">
-      <div class="col-sm-3 text-center various-col">
-        <h3 class="h-100"><%=t('block2.subtitle1')%></h3>
-        <p class="text-justify">
-          <%=t('block2.text1')%>
+    <div class="row moving-row">
+      <div class="col-sm-6 col-md-3 text-center moving-col moving-col-1">
+        <h3><%=t('block2.subtitle1')%></h3>
+        <p>
+          <%=t('block2.text1').truncate_words(20)%>
         </p>
-      </div>	
-      <div class="col-sm-3 text-center responsive-top-space various-col">
-        <h3 class="h-100"><%=t('block2.subtitle2')%></h3>
-        <p class="text-justify">
-          <%=t('block2.text2')%>
-        </p>
-      </div>	
-      <div class="col-sm-3 text-center responsive-top-space various-col">
-        <h3 class="h-100"><%=t('block2.subtitle3')%></h3>
-        <p class="text-justify">
-          <%=t('block2.text3')%>
+        <p class="pt-20">
+          <a href="<%= Wpage.find(2).path(current_locale)%>" class="btn"><%=t('read_more')%></a>
         </p>
       </div>
-      <div class="col-sm-3 text-center responsive-top-space various-col">
-        <h3 class="h-100"><%=t('block2.subtitle4')%></h3>
-        <p class="text-justify">
-          <%=t('block2.text4')%>
+      <div class="col-sm-6 col-md-3 text-center moving-col moving-col-2">
+        <h3><%=t('block2.subtitle2')%></h3>
+        <p>
+          <%=t('block2.text2').truncate_words(30)%>
         </p>
-      </div>						
-    </div> 				
-  </div>			
-</section>	
+        <p class="pt-20">
+          <a href="<%= Wpage.find(3).path(current_locale)%>" class="btn"><%=t('read_more')%></a>
+        </p>
+      </div>
+      <div
+        class="col-sm-6 col-md-3 text-center moving-col moving-col-1 moving-4"
+      >
+        <h3><%=t('block2.subtitle3')%></h3>
+        <p>
+          <%=t('block2.text3').truncate_words(20)%>
+        </p>
+        <p class="pt-20">
+          <a href="<%= Wpage.find(4).path(current_locale)%>" class="btn"><%=t('read_more')%></a>
+        </p>
+      </div>
+      <div
+        class="col-sm-6 col-md-3 text-center moving-col moving-3 moving-col-2"
+      >
+        <h3><%=t('block2.subtitle4')%></h3>
+        <p>
+          <%=t('block2.text4').truncate_words(25)%>
+        </p>
+        <p class="pt-20">
+          <a href="<%= Wpage.find(5).path(current_locale)%>" class="btn"><%=t('read_more')%></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

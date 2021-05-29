@@ -1,1 +1,18 @@
-<%= @wpage.ar_content.html_safe %>
+<section class="section-padding section-2-bg mt-50">
+  <div class="container">
+    <div class="heading-div text-center">
+      <h2><%= @wpage.title(current_locale) %></h2>
+      <h4><%= @wpage.subtitle(current_locale) %></h4>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div>
+  </div>
+</section>
+<section class="section-padding section-1-bg pt-20" id="blog">
+  <div class="container">
+    <div class="row">					
+      <div class="col-sm-12 blog-img">
+        <%= @wpage.content(current_locale) %>
+			</div>
+		</div>
+	</div>
+</section>

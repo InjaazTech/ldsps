@@ -9,7 +9,7 @@
       <% @projects.each do |project| %>
       <div class="col-sm-4 camps-done-col">
         <img src="<%= project.image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
-        <h3><%= project.title(current_locale) %></h3>
+        <h3 class="project-title"><%= project.title(current_locale) %></h3>
         <ul class="blog-date">
           <li><img src="<%= asset_path('website/32x32x4.png') %>" alt="32x32x4" /></li>
           <li><%= project.custom_date %></li>
@@ -18,39 +18,14 @@
         <a href="<%= project.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
       </div>
       <% end %>
-    </div> 				
-  </div>			
-</section>	
-
-<section class="section-padding section-1-bg" id="blog">
-  <div class="container">							
-    <div class="heading-div text-center">
-      <h2><%=t('projects.title')%></h2>
-      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
     </div>
-    <% @projects.each do |project| %>
-    <div class="row pt-20">					
-      <div class="col-sm-6 blog-img">
-        <img src="<%= project.image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
-      </div>
-      <div class="col-sm-6 blog-col">
-        <h3><%= project.title(current_locale) %></h3>
-        <ul class="blog-date">
-          <li><img src="<%= asset_path('website/32x32x4.png') %>" alt="32x32x4" /></li>
-          <li><%= project.custom_date %></li>
-        </ul>
-        <p><%= project.subtitle(current_locale) %></p>
-        <a href="<%= project.path(current_locale) %>" class="btn"><%=t('read_more')%></a>	
+    <div class="row pt-20">
+      <div class="container">
+        <div class="col-sm-12 orphan-children-col text-center">
+          <h2><%=t('projects.all')%></h2>
+          <a href="<%= projects_path(current_locale)%>" class="btn btn-1"><%=t('show')%></a>
+        </div>
       </div>
     </div>
-    <% end %>
   </div>			
-</section>
-<section class="section-padding orphan-children-section">
-  <div class="container">
-    <div class="col-sm-12 orphan-children-col text-center">
-      <h2><%=t('projects.all')%></h2>
-      <a href="<%= projects_path(current_locale)%>" class="btn btn-1"><%=t('show')%></a>
-    </div>
-  </div>
 </section>

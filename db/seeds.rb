@@ -69,3 +69,5 @@ WebsiteConfig.create(ar_title: 'Contact-ar-subtitle', en_title: 'Contact', tr_ti
 PostType.create(ar_title: 'مشروع', en_title: 'project', tr_title: 'project', slug: 'project')
 PostType.create(ar_title: 'خدمة', en_title: 'report', tr_title: 'report', slug: 'report')
 PostType.create(ar_title: 'album', en_title: 'album', tr_title: 'album', slug: 'album')
+
+WebsiteConfig.create(ar_title: 'نظرية التغيير', en_title: 'change-theory', tr_title: 'change-theory', slug: 'change-theory', val: '/', t: 'image')

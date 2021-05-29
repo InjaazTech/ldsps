@@ -7,7 +7,7 @@ class WebsiteController < ApplicationController
     WebsiteConfig.refresh!
     WebsiteConfig.cache!
     @team_members = TeamMember.homepage
-    @sponsers = Supplier.order(order_position: :asc)
+    @sponsers = Supplier.limit(18).order(order_position: :asc)
     @canonical_link = "/ar" if params[:locale].blank?
     @projects = PostType.find_by(slug: 'project').posts.homepage.limit(3)
     @reports = PostType.find_by(slug: 'report').posts.visible.limit(3)
@@ -90,6 +90,13 @@ class WebsiteController < ApplicationController
     @title = t('sponsers.title')
     @description = @title
     @sponsers = Supplier.order(order_position: :asc)
+  end
+
+  def page
+    @wpage = Wpage.find_by_en_slug('about-us')
+    @title = @wpage.title(current_locale)
+    @description = @wpage.subtitle(current_locale)
+    render 'wpage'
   end
 
   private

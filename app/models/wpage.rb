@@ -25,7 +25,11 @@ class Wpage < ApplicationRecord
   end
 
   def admin_title
-    en_title
+    ar_title
+  end
+
+  def path(locale = 'en')
+    "/#{locale}/pages/#{slug(locale)}"
   end
 
   private

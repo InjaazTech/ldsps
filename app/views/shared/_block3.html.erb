@@ -1,0 +1,20 @@
+<section class="section-3-bg who-care-section" id="about">
+  <div class="container-fluid no_padding">				
+     <div class="row no-row">
+      <div class="col-sm-6 who-care-col">
+        <img class="change-theory-img" src="<%= WebsiteConfig.get('change-theory', current_locale) %>" alt="<%=t('block3.text')%>" />
+      </div>
+      <div class="col-sm-6">
+        <div class="heading-div-1 pt-20">
+          <h2><%=t('block3.title')%></h2>
+          <p>
+            <%=t('block3.text')%>
+          </p>
+          <p class="pt-20">
+            <a href="<%= Wpage.find(6).path(current_locale)%>" class="btn"><%=t('read_more')%></a>					
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>			
+</section>	

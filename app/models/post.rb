@@ -34,7 +34,7 @@ class Post < ApplicationRecord
   end
 
   def admin_title
-    en_title
+    ar_title
   end
 
   def title(locale)

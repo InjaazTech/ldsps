@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get :search, to: 'website#search'
     get :team, to: 'website#team'
     get :sponsers, to: 'website#sponsers'
+    get 'pages/:slug', to: 'website#page'
   end
   get :admin, to: redirect('/admin/website_configs')
   namespace :admin do

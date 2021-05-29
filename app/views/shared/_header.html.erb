@@ -25,7 +25,7 @@
             </a>
           </li>	
           <li class="menu <%= 'active' if @reports_active%>">
-            <a href="<%= reports_path(current_locale)%>" class="pagescroll">
+            <a href="<%= reports_path(locale: current_locale, s: 'specialized')%>" class="pagescroll">
               <%= t('header.menu.reports') %>
             </a>
           </li>
@@ -53,14 +53,15 @@
             <a href="#" id="search"><i class="fa fa-search"></i></a>
           </li>
         </ul>
+        <div class="search popup-form">
+          <form method="GET" action="<%= search_path(current_locale)%>">
+            <input type="text" name="q" id="q" value="<%=@q%>" placeholder="<%=t('search.placeholder')%>">
+            <button type="submit" class="donate-bg"><%=t('search.submit')%></button>
+            <a href="#" id="close-search"><%=t('search.close')%></a>
+          </form>
+        </div>
       </div>
       <!-- /.navbar-collapse -->
     </div>
   </nav>
-  <div class="search popup-form">
-    <form method="GET" action="<%= search_path(current_locale)%>">
-      <input type="text" name="q" id="q" value="<%=@q%>" placeholder="<%=t('search.placeholder')%>">
-      <button type="submit" class="donate-bg"><%=t('search.submit')%></button>
-    </form>
-  </div>
 </header>

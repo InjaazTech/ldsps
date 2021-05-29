@@ -71,5 +71,7 @@ ar:
     result: 'نتائج البحث'
     submit: 'ابحث'
     placeholder: 'اكتب ...'
+    close: 'إغلاق'
+    no_result: 'لم نعثر على نتائج مطابقة'
   albums:
     title: 'ألبوم الصور'

@@ -204,8 +204,15 @@
 		
 		$('a#search').on('click', function(e){
 			e.preventDefault();
+			$('#menu-list').toggle();
 			$('.search').toggle();
 			$('#q').focus();
+		});
+
+		$('a#close-search').on('click', function(e){
+			e.preventDefault();
+			$('#menu-list').toggle();
+			$('.search').toggle();
 		});
 
 		$('.carousel').carousel({interval: 2000});

@@ -70,7 +70,7 @@ class Admin::UsersController < Admin::BaseController
     @user = current_user
     if user_params[:password].present?
       @user.validate_password(user_params[:current_password])
-      @user.send(:update_attributes, user_params.except(:current_password)) if @user.errors.empty?
+      @user.send(:update, user_params.except(:current_password)) if @user.errors.empty?
     else
       @user.send(:update_without_password, user_params.except(:password, :current_password))
     end
@@ -79,7 +79,6 @@ class Admin::UsersController < Admin::BaseController
         format.html { redirect_to admin_account_path, notice: t('admin.success') }
         format.json { render :show, status: :ok, location: @user }
       else
-        set_active_plan
         format.html { render 'account' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -94,6 +93,6 @@ class Admin::UsersController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :current_password, :first_name, :last_name)
     end
 end

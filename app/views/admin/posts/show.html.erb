@@ -35,7 +35,7 @@
                 <dt><strong><%= model_class.human_attribute_name(:photos) %>:</strong></dt>
                 <dd>
                   <% @post.post_images.each do |img|%>
-                    <%= image_tag img.image_url, class: 'admin-img' %>
+                    <%= image_tag img.image_url, class: 'admin-img' if img.image_url.present? %>
                   <% end %>
                 </dd>
                 <% end %>

@@ -7,6 +7,6 @@ class Supplier < ApplicationRecord
   end
 
   def pretty_link
-    link.blank? ? '#' : link
+    link.blank? ? '#' : (link.include?('img.image_url') ? link : "http://#{link}")
   end
 end

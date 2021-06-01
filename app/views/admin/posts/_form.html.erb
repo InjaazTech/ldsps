@@ -94,7 +94,7 @@
       <table>
         <% @post.post_images.each do |img| %>
           <tr>
-            <td><%= image_tag img.image_url, class: 'thumb' %></td>
+            <td><%= image_tag img.image_url, class: 'thumb' if img.image_url %></td>
             <td>
               <%= link_to '<i class="fa fa-trash"></i>'.html_safe,
                     admin_attachment_path(img.attachment_id, format: :json),

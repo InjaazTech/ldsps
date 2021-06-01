@@ -30,7 +30,7 @@ class Admin::AttachmentsController < Admin::BaseController
     def destroy
       @attachment.destroy
       respond_to do |format|
-        format.html { redirect_to attachments_url, notice: t('admin.success') }
+        format.html { redirect_to admin_attachments_path, notice: t('admin.success') }
         format.json { head :no_content }
       end
     end
@@ -49,6 +49,6 @@ class Admin::AttachmentsController < Admin::BaseController
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_attachment
-        @attachment = Attachment.find(params[:attachment_id])
+        @attachment = Attachment.find(params[:id])
       end
   end

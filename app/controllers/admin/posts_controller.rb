@@ -10,7 +10,7 @@ class Admin::PostsController < Admin::BaseController
       @q = params[:q]
       case @post_type_id
       when 0
-        @posts = @q.blank? ? Post.all.page(@page_index) : Post.en_title_like(@q).page(@page_index)
+        @posts = @q.blank? ? Post.all.page(@page_index) : Post.title_like(@q).page(@page_index)
       else
         @posts = PostType.find(@post_type_id).posts.page(@page_index)
       end

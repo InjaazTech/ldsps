@@ -4,7 +4,12 @@
   <div class="container-fluid">
     <div class="card shadow">
         <div class="card-header py-3">
-            <p class="text-primary m-0 font-weight-bold"><%=t model_class.human_attribute_name(:model_name) %></p>
+            <p class="text-primary m-0 font-weight-bold">
+              <a class="admin-header-link" href="<%= admin_posts_path %>">All <%=t model_class.human_attribute_name(:model_name) %></a>
+              <a class="admin-header-link" href="<%= admin_posts_path(post_type_id: PostType.find_by_slug('project'))%>">Projects</a>
+              <a class="admin-header-link" href="<%= admin_posts_path(post_type_id: PostType.find_by_slug('report'))%>">Reports</a>
+              <a class="admin-header-link" href="<%= admin_posts_path(post_type_id: PostType.find_by_slug('album'))%>">Albums</a>
+            </p>
         </div>
         <div class="card-body">
             <div class="row">

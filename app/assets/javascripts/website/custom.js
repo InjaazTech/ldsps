@@ -204,15 +204,19 @@
 		
 		$('a#search').on('click', function(e){
 			e.preventDefault();
-			$('#menu-list').toggle();
-			$('.search').toggle();
+			$(".search").fadeIn("slow");
+			$("#menu-list").fadeOut("slow");
+			// $('#menu-list').toggle();
+			// $('.search').toggle();
 			$('#q').focus();
 		});
 
 		$('a#close-search').on('click', function(e){
 			e.preventDefault();
-			$('#menu-list').toggle();
-			$('.search').toggle();
+			$("#menu-list").fadeIn("slow");
+			$(".search").fadeOut("slow");
+			// $('#menu-list').toggle();
+			// $('.search').toggle();
 		});
 
 		// $('.carousel').carousel({interval: 2000});

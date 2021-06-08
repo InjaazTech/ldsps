@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     get :about, to: 'website#about'
     resources :projects, :reports, :albums, param: :slug, only: [:index, :show]
     get :search, to: 'website#search'
-    get :team, to: 'website#team'
     get :sponsers, to: 'website#sponsers'
     get 'pages/:slug', to: 'website#page'
   end

@@ -46,3 +46,14 @@ h3 {
   margin-left: 100px !important;
   left: 0;
 }
+
+@media (min-width: 768px){
+.col-sm-pull-6 {
+  left: 50%;
+  right: -50%;
+}
+
+.col-sm-push-6 {
+  right: 50%;
+}
+}

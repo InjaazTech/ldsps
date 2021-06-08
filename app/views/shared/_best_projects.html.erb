@@ -1,0 +1,37 @@
+<br/>
+<% project = @best_projects.first %>
+<% if project.present?%>
+  <section class="section-padding section-1-bg">
+    <div class="container">							
+      <div class="row">					
+        <div class="col-sm-6 wonderful-img">
+          <img src="<%= project.image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
+        </div>
+        <div class="col-sm-6 wonderful-col">
+          <h3><%= project.title(current_locale) %></h3>
+          <p><%= project.subtitle(current_locale) %>
+          </p>
+          <a href="<%= project.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
+        </div>
+      </div>				
+    </div>			
+  </section>
+<% end %>
+<% project = @best_projects[1] %>
+<% if project.present?%>
+  <section class="section-padding section-2-bg pt-20">
+    <div class="container">							
+      <div class="row">					
+        <div class="col-sm-6 col-sm-push-6 happiest-img">
+          <img src="<%= project.image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6 happiest-col">
+          <h3><%= project.title(current_locale) %></h3>
+          <p><%= project.subtitle(current_locale) %>
+          </p>
+          <a href="<%= project.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
+        </div>
+      </div>				
+    </div>			
+  </section>
+<% end %>

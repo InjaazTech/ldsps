@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_121251) do
+ActiveRecord::Schema.define(version: 2021_06_08_112146) do
 
   create_table "attachments", charset: "utf8", force: :cascade do |t|
     t.string "upload"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_05_25_121251) do
     t.boolean "is_specialized_report", default: false
     t.boolean "show_homepage", default: false
     t.date "custom_date"
+    t.boolean "is_best", default: false
     t.index ["ar_slug"], name: "index_posts_on_ar_slug"
     t.index ["attachment_id"], name: "index_posts_on_attachment_id"
     t.index ["en_slug"], name: "index_posts_on_en_slug"

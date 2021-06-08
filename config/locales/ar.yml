@@ -47,6 +47,8 @@ ar:
   block3:
     title: 'نظرية التغيير'
     text: 'هنا النص'
+  block4:
+    title: 'آخر الأخبار'
   projects:
     title: 'مشاريعنا'
     all: 'كل المشاريع'

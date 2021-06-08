@@ -86,3 +86,20 @@ WebsiteConfig.create(ar_title: 'قيمنا 3 محتوى', en_title: 'values-1-co
 
 WebsiteConfig.create(ar_title: 'قيمنا 4', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'ar-values-4-title', val: 'تست')
 WebsiteConfig.create(ar_title: 'قيمنا 4 محتوى', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'ar-values-4-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'Values 1', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'en-values-1-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'Values 1 content', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'en-values-1-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'Values 2', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'en-values-2-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'Values 2 content', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'en-values-2-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'Values 3', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'en-values-3-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'Values 3 content', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'en-values-3-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'Values 4', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'en-values-4-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'Values 4 content', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'en-values-4-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'آخر الأخبار', en_title: 'latest-news-image', tr_title: 'latest-news-image', slug: 'ar-latest-news-image', val: '/', t: 'image')
+WebsiteConfig.create(ar_title: 'Latest news', en_title: 'latest-news-image', tr_title: 'latest-news-image', slug: 'en-latest-news-image', val: '/', t: 'image')
+WebsiteConfig.create(ar_title: 'آخر الأخبار محتوى', en_title: 'latest-news-content', tr_title: 'latest-news-content', slug: 'ar-latest-news-content', val: 'تست')
+WebsiteConfig.create(ar_title: 'Latest news content', en_title: 'latest-news-content', tr_title: 'latest-news-content', slug: 'en-latest-news-content', val: 'test')

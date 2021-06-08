@@ -1,6 +1,29 @@
-<%= render 'shared/reports'%>
+<section class="section-padding section-1-bg pt-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-center various-col">
+        <a href="<%= reports_path(locale: current_locale, s: 'specialized')%>"><img src="<%= asset_path('website/report1.png') %>" alt="icon" /></a>
+        <h3><%=t('reports.specialized')%></h3>
+        <div class="progress-div">
+          <div class="progress-bar-outer">
+            <div class="progress-bar-inner-100"></div>
+          </div>
+        </div>						
+      </div>	
+      <div class="col-sm-6 text-center responsive-top-space various-col">
+        <a href="<%= reports_path(locale: current_locale, s: 'activity')%>"><i class="fa fa-file-text" style="color: #F8B53A; font-size: 64px;"></i> </a>
+        <h3><%=t('reports.activity')%></h3>
+        <div class="progress-div">
+          <div class="progress-bar-outer">
+            <div class="progress-bar-inner-100"></div>
+          </div>
+        </div>						
+      </div>	
+    </div> 				
+  </div>			
+</section>
 
-<section class="section-padding section-2-bg mt-50">
+<section class="section-padding section-2-bg mt-50 header-bg">
   <div class="container">
     <div class="heading-div text-center">
       <h2><%= @title %></h2>

@@ -9,18 +9,18 @@
         <a href="<%= about_path(current_locale)%>" class="bottom-space"
           ><img src="<%= asset_path('website/values1.png') %>" alt="80x80x1"
         /></a>
-        <h3><%=t('block1.subtitle1')%></h3>
+        <h3 class="h-50"><%= WebsiteConfig.get('values-1-title', current_locale) %></h3>
         <p>
-          <%=t('block1.text1')%>
+          <%= WebsiteConfig.get('values-1-content', current_locale) %>
         </p>
       </div>
       <div class="col-sm-6 col-md-3 text-center moving-col">
         <a href="<%= about_path(current_locale)%>" class="bottom-space"
           ><img src="<%= asset_path('website/values2.png') %>" alt="80x80x2"
         /></a>
-        <h3><%=t('block1.subtitle2')%></h3>
+        <h3 class="h-50"><%= WebsiteConfig.get('values-2-title', current_locale) %></h3>
         <p>
-          <%=t('block1.text2')%>
+          <%= WebsiteConfig.get('values-2-content', current_locale) %>
         </p>
       </div>
       <div
@@ -29,9 +29,9 @@
         <a href="<%= about_path(current_locale)%>" class="bottom-space"
           ><img src="<%= asset_path('website/values3.png') %>" alt="80x80x3"
         /></a>
-        <h3><%=t('block1.subtitle3')%></h3>
+        <h3 class="h-50"><%= WebsiteConfig.get('values-3-title', current_locale) %></h3>
         <p>
-          <%=t('block1.text3')%>
+          <%= WebsiteConfig.get('values-3-content', current_locale) %>
         </p>
       </div>
       <div
@@ -40,9 +40,9 @@
         <a href="<%= about_path(current_locale)%>" class="bottom-space"
           ><img src="<%= asset_path('website/values4.png') %>" alt="80x80x4"
         /></a>
-        <h3><%=t('block1.subtitle4')%></h3>
+        <h3 class="h-50"><%= WebsiteConfig.get('values-4-title', current_locale) %></h3>
         <p>
-          <%=t('block1.text4')%>
+          <%= WebsiteConfig.get('values-4-content', current_locale) %>
         </p>
       </div>
     </div>

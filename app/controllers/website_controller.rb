@@ -93,7 +93,7 @@ class WebsiteController < ApplicationController
   end
 
   def page
-    @wpage = Wpage.find_by_en_slug('about-us')
+    @wpage = current_locale == 'ar' ? Wpage.find_by_ar_slug(params[:slug]) : Wpage.find_by_en_slug(params[:slug])
     @title = @wpage.title(current_locale)
     @description = @wpage.subtitle(current_locale)
     render 'wpage'

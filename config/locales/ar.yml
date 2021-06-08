@@ -6,7 +6,7 @@ ar:
       about: 'من نحن'
       projects: 'المشاريع'
       reports: 'التقارير'
-      album: 'ألبوم'
+      album: 'معرض الصور'
       lang: 'English'
   contact_form:
     title: 'أرسل رسالة'
@@ -63,7 +63,7 @@ ar:
     mgt_team: 'الفريق الاداري'
     show_all: 'فريق العمل'
   show: عرض
-  read_more: 'اقرأ المزيد...'
+  read_more: 'اقرأ المزيد ...'
   about:
     title: 'من نحن'
   search:
@@ -74,4 +74,4 @@ ar:
     close: 'إغلاق'
     no_result: 'لم نعثر على نتائج مطابقة'
   albums:
-    title: 'ألبوم الصور'
+    title: 'معرض الصور'

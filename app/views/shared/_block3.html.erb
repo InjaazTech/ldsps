@@ -1,4 +1,9 @@
+<% theory_wpage = Wpage.find(6)%>
 <section class="section-3-bg who-care-section" id="about">
+  <div class="heading-div text-center">
+    <h2><%= theory_wpage.title(current_locale)%></h2>
+    <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+  </div>
   <div class="container-fluid no_padding">				
      <div class="row no-row">
       <div class="col-sm-6 who-care-col">
@@ -6,12 +11,11 @@
       </div>
       <div class="col-sm-6">
         <div class="heading-div-1 pt-20">
-          <h2><%=t('block3.title')%></h2>
           <p>
-            <%=t('block3.text')%>
+            <%= theory_wpage.first_content_words(30, current_locale) %>
           </p>
           <p class="pt-20">
-            <a href="<%= Wpage.find(6).path(current_locale)%>" class="btn"><%=t('read_more')%></a>					
+            <a href="<%= theory_wpage.path(current_locale)%>" class="btn"><%=t('read_more')%></a>					
           </p>
         </div>
       </div>

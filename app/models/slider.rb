@@ -21,4 +21,8 @@ class Slider < ApplicationRecord
   def link_title(locale = 'ar')
     read_attribute("#{locale}_link_title").to_s
   end
+
+  def has_title?(locale = 'ar')
+    !title(locale).blank?
+  end
 end

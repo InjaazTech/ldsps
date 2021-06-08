@@ -8,12 +8,11 @@
 </section>
 <section class="section-padding section-1-bg pt-20" id="blog">
   <div class="container">
-    <% @posts.each_slice(6) do |row| %>
+    <% @posts.each_slice(3) do |row| %>
     <div class="row">
       <% row.each do |post| %>				
-        <div class="col-sm-3 blog-img">
+        <div class="col-sm-4 blog-img">
           <a href="<%= post.path(current_locale) %>"><img class="album-img" src="<%= post.image_url %>" alt="<%= post.title(current_locale) %>"  class="img-responsive"/></a>
-          <p><%= post.title(current_locale) %></p>
         </div>
       <% end %>
     </div>

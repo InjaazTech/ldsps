@@ -37,6 +37,8 @@ WebsiteConfig.create(ar_title: 'Website keywords(Ar)', en_title: 'Website keywor
 WebsiteConfig.create(ar_title: 'Website keywords(En)', en_title: 'Website keywords(En)', slug: 'en-keywords', val: 'Website keywords')
 WebsiteConfig.create(ar_title: 'instagram', en_title: 'instagram', tr_title: 'instagram', slug: 'instagram', val: 'http://instagram.com/@page')
 
+WebsiteConfig.create(ar_title: 'من نحن عربي', en_title: 'ar-about', tr_title: 'ar-about',slug: 'ar-about', val: 'من نحن')
+WebsiteConfig.create(ar_title: 'من نحن انكليزي', en_title: 'en-about', tr_title: 'en-about',slug: 'en-about', val: 'en-about')
 
 
 
@@ -70,4 +72,17 @@ PostType.create(ar_title: 'مشروع', en_title: 'project', tr_title: 'project'
 PostType.create(ar_title: 'خدمة', en_title: 'report', tr_title: 'report', slug: 'report')
 PostType.create(ar_title: 'album', en_title: 'album', tr_title: 'album', slug: 'album')
 
-WebsiteConfig.create(ar_title: 'نظرية التغيير', en_title: 'change-theory', tr_title: 'change-theory', slug: 'change-theory', val: '/', t: 'image')
+WebsiteConfig.create(ar_title: 'نظرية التغيير عربي', en_title: 'change-theory', tr_title: 'change-theory', slug: 'ar-change-theory', val: '/', t: 'image')
+WebsiteConfig.create(ar_title: 'نظرية التغيير انكليزي', en_title: 'change-theory', tr_title: 'change-theory', slug: 'en-change-theory', val: '/', t: 'image')
+
+WebsiteConfig.create(ar_title: 'قيمنا 1', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'ar-values-1-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'قيمنا 1 محتوى', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'ar-values-1-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'قيمنا 2', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'ar-values-2-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'قيمنا 2 محتوى', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'ar-values-2-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'قيمنا 3', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'ar-values-3-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'قيمنا 3 محتوى', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'ar-values-3-content', val: 'تست')
+
+WebsiteConfig.create(ar_title: 'قيمنا 4', en_title: 'values-1-title', tr_title: 'values-1-title', slug: 'ar-values-4-title', val: 'تست')
+WebsiteConfig.create(ar_title: 'قيمنا 4 محتوى', en_title: 'values-1-content', tr_title: 'values-1-content', slug: 'ar-values-4-content', val: 'تست')

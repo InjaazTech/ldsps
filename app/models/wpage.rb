@@ -32,6 +32,10 @@ class Wpage < ApplicationRecord
     "/#{locale}/pages/#{slug(locale)}"
   end
 
+  def first_content_words(words_count = 50, locale = 'ar')
+    Nokogiri::HTML.parse(content(locale)).text.force_encoding('utf-8').mb_chars.limit(5*words_count).to_s
+  end
+
   private
   def set_slug
     self.ar_slug = ar_title.downcase.gsub(/\s+/, "-").gsub( /[^a-zA-Z0-9أ-ي-]*/ , "")

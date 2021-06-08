@@ -11,13 +11,15 @@
         <% Slider.visible.each_with_index do |slider, idx|%>
         <div class="item <%= 'active' if idx == 0%>">
         <img class="second-slide" src="<%= slider.image_url %>" alt="<%= slider.title(current_locale) %>">
-        <% if slider.has_link?%>
-            <div class="container">
+        <% if slider.has_title?%>
             <div class="carousel-caption">
-                <h1><%= slider.title(current_locale) %></h1>
-                <p class="p-10"><%= slider.subtitle(current_locale) %></p>
-                <p class="p-10"><a class="btn" href="<%= slider.link %>" role="button"><%= slider.link_title(current_locale) %></a></p>
-            </div>
+                <div class="text-box">
+                    <h2 class="wow slideInRight" data-wow-duration="2s"><%= slider.title(current_locale) %></h2>
+                    <p class="wow slideInLeft" data-wow-duration="2s"><%= slider.subtitle(current_locale) %></p>
+                    <% if slider.has_link?%>
+                        <p class="p-10 toggleCaption"><a class="btn" href="<%= slider.link %>" role="button"><%= slider.link_title(current_locale) %></a></p>
+                    <% end %>
+                </div>
             </div>
         <% end %>
         </div>

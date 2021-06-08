@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_112146) do
+ActiveRecord::Schema.define(version: 2021_06_08_153123) do
 
   create_table "attachments", charset: "utf8", force: :cascade do |t|
     t.string "upload"
@@ -204,7 +204,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_112146) do
     t.string "en_title"
     t.string "tr_title"
     t.string "slug"
-    t.string "val"
+    t.string "val", limit: 1000
     t.string "t", limit: 10, default: "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

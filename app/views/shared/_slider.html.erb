@@ -11,7 +11,7 @@
         <% Slider.visible.each_with_index do |slider, idx|%>
         <div class="item <%= 'active' if idx == 0%>">
         <img class="second-slide" src="<%= slider.image_url %>" alt="<%= slider.title(current_locale) %>">
-        <% if slider.has_title?%>
+        <% if slider.has_title?(current_locale)%>
             <div class="carousel-caption">
                 <div class="text-box">
                     <h2 class="wow slideInRight" data-wow-duration="2s"><%= slider.title(current_locale) %></h2>

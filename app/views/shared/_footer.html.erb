@@ -5,8 +5,8 @@
         <div class="row contact-row">
           <div class="col-xs-6 col-sm-6 contact-space contact-space-1">
             <p>
-              <h3 class="text-right color-white"><%=t('about.title')%></h3>
-              <p class="text-right">
+              <h3 class="<%= arabic? ? 'text-right' : 'text-left'%> color-white"><%=t('about.title')%></h3>
+              <p class="<%= arabic? ? 'text-right' : 'text-left'%>">
                 <%= WebsiteConfig.get('about', current_locale) %>
               </p>
             </p>

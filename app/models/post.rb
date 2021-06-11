@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   scope :en_title_like, ->(keyword) { visible.where('lower(en_title) LIKE ?', "%#{keyword.try(:downcase)}%") }
   scope :ar_title_like, ->(keyword) { visible.where('lower(ar_title) LIKE ?', "%#{keyword.try(:downcase)}%") }
 
-  after_create :set_slug
+  after_commit :set_slug
 
   def image_url(size = :full)
     attachment.full_url(size)
@@ -69,6 +69,6 @@ class Post < ApplicationRecord
       clean_en_title = en_title.to_s.downcase.strip.parameterize
       attrs[:en_slug] = "#{id}-#{clean_en_title}"
     end
-    update(attrs)
+    update_columns(attrs) unless attrs.empty?
   end
 end

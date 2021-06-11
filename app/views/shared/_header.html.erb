@@ -56,8 +56,8 @@
         <div class="search popup-form">
           <form method="GET" action="<%= search_path(current_locale)%>">
             <input type="text" name="q" id="q" value="<%=@q%>" placeholder="<%=t('search.placeholder')%>">
-            <button type="submit" class="donate-bg"><%=t('search.submit')%></button>
-            <a href="#" id="close-search"><%=t('search.close')%></a>
+            <button type="submit" class="donate-bg"><i class="fa fa-search"></i></button>
+            <a href="#" id="close-search"><i class="fa fa-close"></i></a>
           </form>
         </div>
       </div>

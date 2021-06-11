@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-sm-12 blog-img popup-form">
 				<%= render 'shared/flash'%>
-        <%= form_for @contact_user, url: send_contact_path, :html => { :class => "mb-0", id: 'template-contactform', name: 'template-contactform' } do |f| %>
+        <%= form_for @contact_user, url: send_contact_path(locale: current_locale), :html => { :class => "mb-0", id: 'template-contactform', name: 'template-contactform' } do |f| %>
 				<div class="row">
 					<input class="name col-xs-12 col-sm-12" type="text" name="contact_user[name]" placeholder="<%= t('contact_form.name')%>" required autocomplete="off">
 					<input class="email col-xs-12 col-sm-12" type="email" name="contact_user[email]" placeholder="<%= t('contact_form.email')%>" required autocomplete="off">

@@ -21,7 +21,7 @@ ar:
     address: 'العنوان'
     speak: 'اتصل بنا'
     send_failed: 'فشلت العملية للأسف'
-    send_success: 'تم ارسال الرسالة بنجاح'
+    send_success: 'شكراً لتواصلك معنا، تم إرسال رسالتك بنجاح'
   block1:
     title: 'قيمنا'
     subtitle1: 'ﺣﻘﻮق اﻻﻧﺴﺎن'

@@ -23,7 +23,7 @@ en:
     send_failed: 'Failed to send your message'
     send_success: 'The message has been sent successfully'
   block1:
-    title: 'Moving with'
+    title: 'Our Values'
     subtitle1: 'subtitle1'
     text1: 'text1'
     subtitle2: 'subtitle1'
@@ -32,17 +32,25 @@ en:
     text3: 'text1'
     subtitle4: 'subtitle1'
     text4: 'text1'
+  block2:
+    title: 'LOCAL COMMUNITY EMPOWERMENT'
+    subtitle: 'By Means Of Strategy'
+  block3:
+    title: 'Change Theory'
+    text: 'text'
+  block4:
+    title: 'Latest news'
   projects:
     title: 'Our projects'
-    all: 'Our all projects'
+    all: 'All projects'
   reports:
     title: 'Our reports'
     all: 'Our all reports'
     activity: 'Activity Reports'
-    specialized: 'Specialized Reports'
+    specialized: 'Annual Reports'
   sponsers:
-    title: 'Our Beloved Sponsors'
-    all: 'All Sponsors'
+    title: 'Our Beloved Partners'
+    all: 'All Partners'
   team:
     title: 'Our Team'
     mgt_team: 'Management Team'
@@ -59,4 +67,4 @@ en:
     placeholder: 'Please type ...'
     close: Close
   albums:
-    title: 'Albums'
+    title: 'Gallery'

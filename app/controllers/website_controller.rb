@@ -40,7 +40,7 @@ class WebsiteController < ApplicationController
       mg_client = Mailgun::Client.new ENV['SMTP_API_KEY'], 'api.eu.mailgun.net'
       html_content = "<p>Name: #{contact_user_params[:name]}<p> <p>Email: #{contact_user_params[:email]}</p> <p>Message: #{contact_user_params[:message]}</p>"
       message_params =  { from: "#{contact_user_params[:name]}<#{contact_user_params[:email]}>",
-                          to:   'zhazeem@gmail.com',
+                          to: ENV['CONTACT_EMAIL'],
                           subject: "New contact from website",
                           html: html_content
                         }

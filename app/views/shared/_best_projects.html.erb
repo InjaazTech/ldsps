@@ -5,7 +5,7 @@
     <div class="container">							
       <div class="row">					
         <div class="col-sm-6 wonderful-img">
-          <img src="<%= project.image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
+          <img src="<%= arabic? ? project.image_url : project.en_image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
         </div>
         <div class="col-sm-6 wonderful-col">
           <h3 class="project-title"><%= project.title(current_locale) %></h3>
@@ -27,7 +27,7 @@
     <div class="container">							
       <div class="row">					
         <div class="col-sm-6 col-sm-push-6 happiest-img">
-          <img src="<%= project.image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
+          <img src="<%= arabic? ? project.image_url : project.en_image_url %>" alt="<%= project.title(current_locale) %>"  class="img-responsive"/>
         </div>
         <div class="col-sm-6 col-sm-pull-6 happiest-col">
           <h3 class="project-title"><%= project.title(current_locale) %></h3>

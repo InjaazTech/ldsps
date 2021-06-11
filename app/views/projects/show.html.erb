@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">					
       <div class="col-sm-12 blog-img">
-        <img src="<%= @post.image_url %>" alt="<%= @post.title(current_locale)%>" />
+        <img src="<%= arabic? ? @post.image_url : @post.en_image_url %>" alt="<%= @post.title(current_locale)%>" />
         <br/><br/>
         <%= @post.content(current_locale) %>
 			</div>

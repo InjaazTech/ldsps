@@ -25,6 +25,30 @@ $(document).ready(function () {
 		sizeErrorStr: 'Too big file'
 	});
 
+	var elem = $("#fileuploader-en");
+	var maxFileCount = elem.data('max-file-count');
+	elem.uploadFile({
+		url: "/admin/attachments.json",
+		fileName: "upload",
+		acceptFiles: "image/*",
+		maxFileCount: maxFileCount,
+		showPreview: true,
+		previewWidth: '100px',
+		onSuccess: function (files, data, xhr) {
+			if (maxFileCount > 1) {
+				elem.append('<input type="hidden" name="attachments_ids[]" value="' + data.attachment.id + '">');
+			} else {
+				$('#en_attachment_id').val(data.attachment.id);
+				$('#en_attachment_url').val(data.attachment.upload.url);
+			}
+		},
+		dragDropStr: 'Drag and drop',
+		uploadStr: 'Select an image',
+		doneStr: 'Done',
+		extErrorStr: 'Exentions is not supported',
+		sizeErrorStr: 'Too big file'
+	});
+
 	$('.remove-img').on('ajax:success', function(e, data, status, xhr){
 		var elem = $(this);
 		elem.parent().parent().remove();

@@ -28,6 +28,15 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :en_attachment_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.hidden_field :en_attachment_id, id: 'en_attachment_id' %>
+      <%= image_tag @post.en_image_url(:thumb), class: 'thumb' if !@post.new_record? && @post.has_en_image? %>
+      <div id="fileuploader-en" data-max-file-count="1">Upload</div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :order_position, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :order_position, :class => 'form-control' %>

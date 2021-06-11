@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_153123) do
+ActiveRecord::Schema.define(version: 2021_06_11_070712) do
 
   create_table "attachments", charset: "utf8", force: :cascade do |t|
     t.string "upload"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_153123) do
     t.boolean "show_homepage", default: false
     t.date "custom_date"
     t.boolean "is_best", default: false
+    t.bigint "en_attachment_id"
     t.index ["ar_slug"], name: "index_posts_on_ar_slug"
     t.index ["attachment_id"], name: "index_posts_on_attachment_id"
     t.index ["en_slug"], name: "index_posts_on_en_slug"

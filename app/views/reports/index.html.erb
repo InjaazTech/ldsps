@@ -38,7 +38,7 @@
       <% row.each do |post| %>
           <div class="col-sm-4 camps-done-col">
             <img
-              src="<%= post.image_url %>"
+              src="<%= arabic? ? post.image_url : post.en_image_url %>"
               alt="<%= post.title(current_locale) %>"
               class="img-responsive"
             />

@@ -87,6 +87,6 @@ class Admin::PostsController < Admin::BaseController
   
       # Only allow a list of trusted parameters through.
       def post_params
-        params.require(:post).permit(:custom_date, :is_best, :is_activity_report,:is_specialized_report,:show_homepage,:attachment_id, :post_type_id, :ar_title, :en_title, :tr_title, :ar_subtitle, :is_published, :en_subtitle, :tr_subtitle, :ar_content, :en_content, :tr_content, :ar_video_url, :en_video_url, :price, :speed_limit, :seo_limit, :order_position, :keywords_tasks_limit, :attachments_ids => [])
+        params.require(:post).permit(:custom_date, :is_best, :en_attachment_id, :is_activity_report,:is_specialized_report,:show_homepage,:attachment_id, :post_type_id, :ar_title, :en_title, :tr_title, :ar_subtitle, :is_published, :en_subtitle, :tr_subtitle, :ar_content, :en_content, :tr_content, :ar_video_url, :en_video_url, :price, :speed_limit, :seo_limit, :order_position, :keywords_tasks_limit, :attachments_ids => [])
       end
   end

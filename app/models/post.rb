@@ -4,6 +4,7 @@ class Post < ApplicationRecord
 
   belongs_to :post_type
   belongs_to :attachment, required: false
+  belongs_to :en_attachment, class_name: 'Attachment', foreign_key: 'en_attachment_id', required: false
   has_many :post_images
   
   scope :visible, ->() {where(is_published: true).order(id: :desc)}
@@ -20,6 +21,14 @@ class Post < ApplicationRecord
 
   def has_image?
     attachment_id.present?
+  end
+
+  def en_image_url(size = :full)
+    has_en_image? ? en_attachment.full_url(size) : image_url(size)
+  end
+
+  def has_en_image?
+    en_attachment_id.present?
   end
 
   def album?

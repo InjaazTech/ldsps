@@ -60,6 +60,7 @@ en:
         post_type_id: 'Type'
         post_type: Type
         attachment_id: Cover
+        en_attachment_id: English Cover
         ar_title: Title(Ar)
         en_title: Title(En)
         tr_title: Title(Tr)

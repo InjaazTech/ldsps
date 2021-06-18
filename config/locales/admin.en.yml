@@ -178,3 +178,5 @@ en:
       photos: 'Photos'
     profile:
       title: 'Profile'
+  true: 'Yes'
+  false: 'No'

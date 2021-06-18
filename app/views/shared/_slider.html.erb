@@ -3,12 +3,12 @@
 <div id="myCarousel" class="carousel slide carousel-fade">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <% Slider.visible.each_with_index do |slider, idx|%>
+        <% Slider.visible.order(order_position: :asc).each_with_index do |slider, idx|%>
         <li data-target="#myCarousel" data-slide-to="<%= idx %>" class="<%= 'active' if idx == 0%>"></li>
         <% end %>
     </ol>
     <div class="carousel-inner" role="listbox">
-        <% Slider.visible.each_with_index do |slider, idx|%>
+        <% Slider.visible.order(order_position: :asc).each_with_index do |slider, idx|%>
         <div class="item <%= 'active' if idx == 0%>">
         <img class="second-slide" src="<%= slider.image_url %>" alt="<%= slider.title(current_locale) %>">
         <% if slider.has_title?(current_locale)%>

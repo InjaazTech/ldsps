@@ -20,8 +20,6 @@
                     <thead>
                         <tr>
                           <th><%= model_class.human_attribute_name(:admin_title) %></th>
-                          <th><%= model_class.human_attribute_name(:show_header) %></th>
-                          <th><%= model_class.human_attribute_name(:show_footer) %></th>
                           <th><%= model_class.human_attribute_name(:created_at) %></th>
                           <th><%=t '.actions', :default => t("helpers.actions") %></th>
                         </tr>
@@ -30,8 +28,6 @@
                       <% @wpages.each do |wpage| %>
                         <tr>
                           <td><%= wpage.admin_title %></td>
-                          <td><%= wpage.show_header? ? '<i class="icon-line-eye"></i>'.html_safe : '<i class="fa fa-eye-close"></i>'.html_safe  %></td>
-                          <td><%= wpage.show_footer? ? '<i class="icon-line-eye"></i>'.html_safe : '<i class="fa fa-eye-close"></i>'.html_safe  %></td>
                           <td><%= short_datetime(wpage.created_at) %></td>
                           <td>
                             <%= link_to '<i class="fa fa-eye"></i>'.html_safe,

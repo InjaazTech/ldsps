@@ -30,7 +30,7 @@
                       <td><%= image_tag slider.image_url, class: 'thumb' %></td>
                       <td><%= slider.link %></td>
                       <td><%= slider.order_position %></td>
-                      <td><%= slider.hidden %></td>
+                      <td><%= t(slider.hidden.to_s) %></td>
                       <td><%= short_datetime(slider.created_at) %></td>
                       <td>
                         <%= link_to '<i class="fa fa-eye"></i>'.html_safe,

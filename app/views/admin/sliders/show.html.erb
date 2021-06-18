@@ -22,7 +22,7 @@
                 <dt><strong><%= model_class.human_attribute_name(:position) %>:</strong></dt>
                 <dd><%= @slider.order_position %></dd>
                 <dt><strong><%= model_class.human_attribute_name(:hidden) %>:</strong></dt>
-                <dd><%= @slider.hidden %></dd>
+                <dd><%= t(@slider.hidden) %></dd>
               </dl>
 
               <%= link_to '<i class="fa fa-eye"></i>'.html_safe,

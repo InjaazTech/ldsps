@@ -70,6 +70,6 @@ class Admin::SlidersController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def slider_params
-      params.require(:slider).permit(:attachment_id, :link, :position, :hidden, :ar_link_title, :en_link_title, :tr_link_title, :ar_title, :en_title, :tr_title, :ar_subtitle, :en_subtitle, :tr_subtitle)
+      params.require(:slider).permit(:attachment_id, :order_position, :link, :position, :hidden, :ar_link_title, :en_link_title, :tr_link_title, :ar_title, :en_title, :tr_title, :ar_subtitle, :en_subtitle, :tr_subtitle)
     end
 end

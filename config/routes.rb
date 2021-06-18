@@ -25,9 +25,8 @@ Rails.application.routes.draw do
     resources :attachments, only: [:index, :new, :create, :destroy]
     resources :posts
     resources :contact_users, only: [:index, :destroy]
-    resources :fa_questions
     resources :suppliers
-    resources :clients, :testimonials, :team_members, :users
+    resources :users
   end
   # match "*path", to: "website#not_found", via: :all
 end

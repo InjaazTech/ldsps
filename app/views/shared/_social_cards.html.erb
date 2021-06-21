@@ -3,7 +3,7 @@
 <meta property="og:title" content="<%= @title %>" />
 <meta property="og:description" content="<%= @description %>" />
 <% if @post.present?%>
-  <meta property="og:image" content="<%= @post.image_url %>" />
+  <meta property="og:image" content="<%= arabic? ? @post.image_url : @post.en_image_url %>" />
 <% else %>
   <meta property="og:image" content="<%= asset_url('website/social-logo.png')%>" />
 <% end %>

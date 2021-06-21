@@ -10,7 +10,7 @@
         <img src="<%= WebsiteConfig.get('latest-news-image', current_locale) %>" alt="<%=t('block4.title')%>" class="img-responsive" />
       </div>
       <div class="col-sm-6 news-col">
-        <p>
+        <p class="latest-news-lines">
           <%= latest_news_wpage.first_content_words(400, current_locale) %>
         </p>
         <p class="pt-20">

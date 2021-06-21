@@ -74,8 +74,8 @@ en:
         photos: 'photos'
         admin_title: 'Title'
         is_published: 'Is published?'
-        is_specialized_report: 'Yearly Report?'
-        is_activity_report: 'Activity Report?'
+        is_specialized_report: 'Annual Report?'
+        is_activity_report: 'Special Report?'
         show_homepage: 'Show on homepage?'
         custom_date: 'Date'
       contact_user:

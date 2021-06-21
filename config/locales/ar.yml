@@ -55,7 +55,7 @@ ar:
   reports:
     title: 'تقارير'
     all: 'كل التقارير'
-    activity: 'تقارير النشاطات'
+    activity: 'تقارير خاصة'
     specialized: 'تقارير سنوية'
   sponsers:
     title: 'شركاؤنا'

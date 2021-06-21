@@ -8,9 +8,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :ar_slug, limit: 255, index: true
       t.string :en_slug, limit: 255, index: true
       t.string :tr_slug, limit: 255, index: true
-      t.string :ar_subtitle, limit: 255
-      t.string :en_subtitle, limit: 255
-      t.string :tr_subtitle, limit: 255
+      t.string :ar_subtitle, limit: 1000
+      t.string :en_subtitle, limit: 1000
+      t.string :tr_subtitle, limit: 1000
       t.text :ar_content
       t.text :en_content
       t.text :tr_content

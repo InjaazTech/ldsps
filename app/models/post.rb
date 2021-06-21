@@ -67,6 +67,10 @@ class Post < ApplicationRecord
     created_at.strftime('%Y-%m-%d')
   end
 
+  def subtitle_first_content_words(words_count = 50, locale = 'ar')
+    Nokogiri::HTML.parse(subtitle(locale)).text.force_encoding('utf-8').mb_chars.limit(5*words_count).to_s
+  end
+
   private
   def set_slug
     attrs = {}

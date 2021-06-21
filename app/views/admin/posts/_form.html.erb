@@ -136,14 +136,15 @@
     </div>
   <% end %>
 
-  <% if @post.project? %>
-    <div class="form-group">
-      <%= f.label :show_homepage, :class => 'control-label col-lg-2' %>
-      <div class="col-lg-10 switch">
-        <%= f.check_box :show_homepage, :class => 'switch-toggle switch-toggle-round', id: 'switch-toggle-1' %>
-        <label for="switch-toggle-1"></label>
-      </div>
+  <div class="form-group">
+    <%= f.label :show_homepage, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10 switch">
+      <%= f.check_box :show_homepage, :class => 'switch-toggle switch-toggle-round', id: 'switch-toggle-1' %>
+      <label for="switch-toggle-1"></label>
     </div>
+  </div>
+
+  <% if @post.project? %>
     <div class="form-group">
       <%= f.label :is_best, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10 switch">

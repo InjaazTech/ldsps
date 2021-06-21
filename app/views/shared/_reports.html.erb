@@ -23,6 +23,20 @@
           </div>
         </div>						
       </div>	
-    </div> 				
+    </div>
+    <br/>
+    <div class="row">
+      <% @reports.each do |report| %>
+      <div class="col-sm-4 camps-done-col">
+        <img src="<%= report.image_url %>" alt="<%= report.title(current_locale) %>"  class="img-responsive"/>
+        <h3 class="report-title"><%= report.title(current_locale) %></h3>
+        <ul class="blog-date">
+          <li><img src="<%= asset_path('website/32x32x4.png') %>" alt="32x32x4" /></li>
+        </ul>
+        <p><%= report.subtitle(current_locale) %></p>
+        <a href="<%= report.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
+      </div>
+      <% end %>
+    </div>			
   </div>			
 </section>

@@ -10,7 +10,7 @@ class WebsiteController < ApplicationController
     @sponsers = Supplier.limit(18).order(order_position: :asc)
     @canonical_link = "/ar" if params[:locale].blank?
     @projects = PostType.find_by(slug: 'project').posts.homepage.limit(3)
-    @reports = PostType.find_by(slug: 'report').posts.visible.limit(3)
+    @reports = PostType.find_by(slug: 'report').posts.homepage.limit(3)
     @best_projects = @projects.where(is_best: true).limit(2)
   end
 

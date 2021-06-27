@@ -2,7 +2,9 @@
   <div class="container">
     <div class="heading-div text-center heading-title">
       <h2><%= @wpage.title(current_locale) %></h2>
-      <h4><%= @wpage.subtitle(current_locale) %></h4>
+      <% if @wpage.id != 7%>
+        <h4><%= @wpage.subtitle(current_locale) %></h4>
+      <% end %>
       <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
     </div>
   </div>

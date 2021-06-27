@@ -11,7 +11,7 @@
       </div>
       <div class="col-sm-6 news-col">
         <p class="latest-news-lines">
-          <%= latest_news_wpage.first_content_words(400, current_locale) %>
+          <%= latest_news_wpage.subtitle(current_locale) %>
         </p>
         <p class="pt-20">
           <a href="<%= latest_news_wpage.path(current_locale)%>" class="btn"><%=t('read_more')%></a>					

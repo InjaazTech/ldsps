@@ -11,7 +11,7 @@ class WebsiteController < ApplicationController
     @canonical_link = "/ar" if params[:locale].blank?
     @projects = PostType.find_by(slug: 'project').posts.homepage.limit(3)
     @reports = PostType.find_by(slug: 'report').posts.homepage.limit(3)
-    @best_projects = @projects.where(is_best: true).limit(2)
+    @best_projects = PostType.find_by(slug: 'project').posts.best_projects.limit(2)
   end
 
   def contact

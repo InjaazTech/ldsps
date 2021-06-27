@@ -17,9 +17,7 @@
               class="img-responsive"
             />
             <h3><%= post.title(current_locale) %></h3>
-            <p>
-              <%= post.subtitle(current_locale) %>
-            </p>
+            <p><%= post.subtitle_first_content_words(40, current_locale) %> ...</p>
             <a href="<%= post.path(current_locale) %>" class="btn"><%=t('read_more')%></a>
             <br/>
           </div>

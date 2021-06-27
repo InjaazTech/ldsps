@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   
   scope :visible, ->() {where(is_published: true).order(id: :desc)}
   scope :homepage, ->() {visible.where(show_homepage: true).order(id: :desc)}
+  scope :best_projects, ->() {visible.where(is_best: true).order(id: :desc)}
   scope :title_like, ->(keyword) { visible.where('lower(en_title) LIKE ? OR lower(ar_title) LIKE ?', "%#{keyword.try(:downcase)}%", "%#{keyword.try(:downcase)}%") }
   scope :en_title_like, ->(keyword) { visible.where('lower(en_title) LIKE ?', "%#{keyword.try(:downcase)}%") }
   scope :ar_title_like, ->(keyword) { visible.where('lower(ar_title) LIKE ?', "%#{keyword.try(:downcase)}%") }

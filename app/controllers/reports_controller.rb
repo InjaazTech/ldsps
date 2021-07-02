@@ -17,6 +17,7 @@ class ReportsController < ApplicationController
       @posts = PostType.find_by(slug: 'report').posts.visible.page(@page_index)
     end
     @description = @title
+    @canonical_link = "/#{current_locale}/reports"
   end
 
   def show

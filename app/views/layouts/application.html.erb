@@ -32,7 +32,7 @@
       <link rel="canonical" href="<%= @canonical_link %>">
     <% end %>
     <% unless Rails.env.production?%>
-  <meta name="robots" content="noindex,nofollow">
+      <meta name="robots" content="noindex,nofollow">
     <% end %>
     <%= yield :recaptcha_js %>
   </head>

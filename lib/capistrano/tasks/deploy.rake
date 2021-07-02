@@ -20,5 +20,5 @@ namespace :deploy do
 
 end 
 
-#after 'deploy:published', 'sitemap:create'
+after 'deploy:published', 'sitemap:create'
 after 'deploy:finished', 'deploy:website_config_cache'

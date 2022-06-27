@@ -4,7 +4,7 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-host = '161.97.68.94'
+host = '52.255.183.18'
 user = 'deployer'
 
 roles = "#{user}@#{host}"

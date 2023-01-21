@@ -12,17 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2021_06_11_070712) do
 
-  create_table "attachments", charset: "utf8", force: :cascade do |t|
+  create_table "attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "upload"
     t.string "t", limit: 20
     t.bigint "user_id"
+    t.boolean "is_general", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_general", default: false
     t.index ["user_id"], name: "index_attachments_on_user_id"
   end
 
-  create_table "ckeditor_assets", charset: "utf8", force: :cascade do |t|
+  create_table "ckeditor_assets", charset: "utf8mb3", force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "clients", charset: "utf8", force: :cascade do |t|
+  create_table "clients", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "attachment_id"
     t.string "link"
     t.integer "order_position", default: 0
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["attachment_id"], name: "index_clients_on_attachment_id"
   end
 
-  create_table "contact_users", charset: "utf8", force: :cascade do |t|
+  create_table "contact_users", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "phone", limit: 20
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "fa_questions", charset: "utf8", force: :cascade do |t|
+  create_table "fa_questions", charset: "utf8mb3", force: :cascade do |t|
     t.string "ar_question", limit: 500
     t.string "en_question", limit: 500
     t.string "tr_question", limit: 500
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_images", charset: "utf8", force: :cascade do |t|
+  create_table "post_images", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "post_id"
     t.bigint "attachment_id"
     t.datetime "created_at", null: false
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["post_id"], name: "index_post_images_on_post_id"
   end
 
-  create_table "post_types", charset: "utf8", force: :cascade do |t|
+  create_table "post_types", charset: "utf8mb3", force: :cascade do |t|
     t.string "ar_title"
     t.string "en_title"
     t.string "tr_title"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["slug"], name: "index_post_types_on_slug"
   end
 
-  create_table "posts", charset: "utf8", force: :cascade do |t|
+  create_table "posts", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "post_type_id"
     t.bigint "attachment_id"
     t.string "ar_title"
@@ -93,19 +93,19 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.string "ar_slug"
     t.string "en_slug"
     t.string "tr_slug"
-    t.string "ar_subtitle"
-    t.string "en_subtitle"
-    t.string "tr_subtitle"
+    t.string "ar_subtitle", limit: 1000
+    t.string "en_subtitle", limit: 1000
+    t.string "tr_subtitle", limit: 1000
     t.text "ar_content"
     t.text "en_content"
     t.text "tr_content"
     t.integer "order_position", default: 0
     t.boolean "is_published", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.boolean "is_activity_report", default: false
     t.boolean "is_specialized_report", default: false
     t.boolean "show_homepage", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.date "custom_date"
     t.boolean "is_best", default: false
     t.bigint "en_attachment_id"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["tr_slug"], name: "index_posts_on_tr_slug"
   end
 
-  create_table "sliders", charset: "utf8", force: :cascade do |t|
+  create_table "sliders", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "attachment_id"
     t.string "link"
     t.string "ar_link_title"
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["attachment_id"], name: "index_sliders_on_attachment_id"
   end
 
-  create_table "suppliers", charset: "utf8", force: :cascade do |t|
+  create_table "suppliers", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "attachment_id"
     t.string "link"
     t.integer "order_position", default: 0
@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["attachment_id"], name: "index_suppliers_on_attachment_id"
   end
 
-  create_table "support_locales", charset: "utf8", force: :cascade do |t|
+  create_table "support_locales", charset: "utf8mb3", force: :cascade do |t|
     t.string "ar_title"
     t.string "en_title"
     t.string "tr_title"
@@ -154,7 +154,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["iso_code"], name: "index_support_locales_on_iso_code"
   end
 
-  create_table "team_members", charset: "utf8", force: :cascade do |t|
+  create_table "team_members", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "attachment_id"
     t.string "ar_name"
     t.string "en_name"
@@ -163,13 +163,13 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.string "en_text"
     t.string "tr_text"
     t.integer "order_position", default: 0
+    t.boolean "show_homepage", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "show_homepage", default: false
     t.index ["attachment_id"], name: "index_team_members_on_attachment_id"
   end
 
-  create_table "testimonials", charset: "utf8", force: :cascade do |t|
+  create_table "testimonials", charset: "utf8mb3", force: :cascade do |t|
     t.string "ar_name"
     t.string "en_name"
     t.string "tr_name"
@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -200,7 +200,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "website_configs", charset: "utf8", force: :cascade do |t|
+  create_table "website_configs", charset: "utf8mb3", force: :cascade do |t|
     t.string "ar_title"
     t.string "en_title"
     t.string "tr_title"
@@ -212,7 +212,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.index ["slug"], name: "index_website_configs_on_slug"
   end
 
-  create_table "wpages", charset: "utf8", force: :cascade do |t|
+  create_table "wpages", charset: "utf8mb3", force: :cascade do |t|
     t.string "ar_title"
     t.string "en_title"
     t.string "tr_title"
@@ -226,9 +226,9 @@ ActiveRecord::Schema.define(version: 2021_06_11_070712) do
     t.boolean "show_footer", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ar_subtitle"
-    t.string "en_subtitle"
-    t.string "tr_subtitle"
+    t.string "ar_subtitle", limit: 1000
+    t.string "en_subtitle", limit: 1000
+    t.string "tr_subtitle", limit: 1000
     t.index ["ar_slug"], name: "index_wpages_on_ar_slug"
     t.index ["en_slug"], name: "index_wpages_on_en_slug"
     t.index ["tr_slug"], name: "index_wpages_on_tr_slug"

@@ -7,7 +7,7 @@ class WebsiteConfig < ApplicationRecord
   end
 
   def self.get(k, locale = 'ar')
-    Rails.cache.fetch('website-configs').select{|s| s.slug == k || s.slug == "#{locale}-#{k}"}.first.try(:val)
+    Rails.cache.fetch('website-configs').select{|s| s.slug == k || s.slug == "#{locale}-#{k}"}.first.try(:val).to_s
   end
 
   def self.refresh!

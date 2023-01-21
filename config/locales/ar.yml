@@ -2,7 +2,7 @@ ar:
   header:
     menu:
       home: 'الرئيسية'
-      contact: 'اتصل بنا'
+      contact: 'تواصل معنا'
       about: 'من نحن'
       projects: 'المشاريع'
       reports: 'التقارير'
@@ -19,7 +19,7 @@ ar:
     twitter: 'تويتر'
     skype: 'سكايب'
     address: 'العنوان'
-    speak: 'اتصل بنا'
+    speak: 'تواصل معنا'
     send_failed: 'فشلت العملية للأسف'
     send_success: 'شكراً لتواصلك معنا، تم إرسال رسالتك بنجاح'
   block1:
@@ -68,6 +68,7 @@ ar:
   read_more: 'اقرأ المزيد ...'
   about:
     title: 'من نحن'
+    social: 'مكتب التنمية على وسائل التواصل'
   search:
     title: 'البحث'
     result: 'نتائج البحث'

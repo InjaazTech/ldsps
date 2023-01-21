@@ -19,6 +19,18 @@
               <%= t('header.menu.home') %>
             </a>
           </li>
+          <li class="menu <%= 'active' if @about_active%>">
+            <a href="<%= about_path(current_locale) %>" class="pagescroll">
+              <%= t('header.menu.about') %>
+            </a>
+          </li>
+          <% if @theory_wpage %>
+            <li class="menu <%= 'active' if @about_active%>">
+              <a href="<%= @theory_wpage.path(current_locale)%>" class="pagescroll">
+                <%= t('block3.title') %>
+              </a>
+            </li>
+          <% end %>
           <li class="menu <%= 'active' if @projects_active%>">
             <a href="<%= projects_path(current_locale)%>" class="pagescroll">
               <%= t('header.menu.projects') %>
@@ -29,19 +41,14 @@
               <%= t('header.menu.reports') %>
             </a>
           </li>
-          <li class="menu <%= 'active' if @about_active%>">
-            <a href="<%= about_path(current_locale) %>" class="pagescroll">
-              <%= t('header.menu.about') %>
+          <li class="menu <%= 'active' if @reports_active%>">
+            <a href="<%= sponsers_path(current_locale)%>" class="pagescroll">
+              <%= t('sponsers.title') %>
             </a>
           </li>
           <li class="menu <%= 'active' if @contact_active%>">
             <a href="<%= contact_us_path(current_locale) %>" class="pagescroll">
               <%= t('header.menu.contact') %>
-            </a>
-          </li>
-          <li class="menu <%= 'active' if @album_active%>">
-            <a href="<%= albums_path(current_locale) %>" class="pagescroll">
-              <%= t('header.menu.album') %>
             </a>
           </li>
           <li class="menu">

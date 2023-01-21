@@ -1,22 +1,24 @@
-<% latest_news_wpage = Wpage.find(7)%>
-<section class="section-padding section-2-bg">
-  <div class="container">
-    <div class="heading-div text-center">
-      <h2><%=t('block4.title')%></h2>
-      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
-    </div>
-    <div class="row relief-camp">
-      <div class="col-sm-6">
-        <img src="<%= WebsiteConfig.get('latest-news-image', current_locale) %>" alt="<%=t('block4.title')%>" class="img-responsive" />
+<% latest_news_wpage = Wpage.find_by(id: 7)%>
+<% if latest_news_wpage %>
+  <section class="section-padding section-2-bg">
+    <div class="container">
+      <div class="heading-div text-center">
+        <h2><%=t('block4.title')%></h2>
+        <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
       </div>
-      <div class="col-sm-6 news-col">
-        <p class="latest-news-lines">
-          <%= latest_news_wpage.subtitle(current_locale) %>
-        </p>
-        <p class="pt-20">
-          <a href="<%= latest_news_wpage.path(current_locale)%>" class="btn"><%=t('read_more')%></a>					
-        </p>
-      </div>					
-    </div>				
-  </div>			
-</section>		
+      <div class="row relief-camp">
+        <div class="col-sm-6">
+          <img src="<%= WebsiteConfig.get('latest-news-image', current_locale) %>" alt="<%=t('block4.title')%>" class="img-responsive" />
+        </div>
+        <div class="col-sm-6 news-col">
+          <p class="latest-news-lines">
+            <%= latest_news_wpage.subtitle(current_locale) %>
+          </p>
+          <p class="pt-20">
+            <a href="<%= latest_news_wpage.path(current_locale)%>" class="btn"><%=t('read_more')%></a>					
+          </p>
+        </div>					
+      </div>				
+    </div>			
+  </section>		
+<% end %>

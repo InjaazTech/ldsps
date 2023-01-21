@@ -1,24 +1,25 @@
-<% theory_wpage = Wpage.find(6)%>
-<section class="section-3-bg who-care-section pb-50" id="about">
-  <div class="heading-div text-center">
-    <h2><%= theory_wpage.title(current_locale)%></h2>
-    <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
-  </div>
-  <div class="container-fluid no_padding">				
-     <div class="row no-row">
-      <div class="col-sm-6 who-care-col">
-        <img class="change-theory-img" src="<%= WebsiteConfig.get('change-theory', current_locale) %>" alt="<%=t('block3.text')%>" />
-      </div>
-      <div class="col-sm-6">
-        <div class="heading-div-1 pt-20">
-          <p class="latest-news-lines">
-            <%= theory_wpage.first_content_words(400, current_locale) %>
-          </p>
-          <p class="pt-20">
-            <a href="<%= theory_wpage.path(current_locale)%>" class="btn"><%=t('read_more')%></a>					
-          </p>
+<% if @theory_wpage %>
+  <section class="section-3-bg who-care-section pb-50" id="about">
+    <div class="heading-div text-center">
+      <h2><%= @theory_wpage.title(current_locale)%></h2>
+      <img src="<%= asset_path('website/90x10x1.png') %>" alt="icon" />
+    </div>
+    <div class="container-fluid no_padding">				
+      <div class="row no-row">
+        <div class="col-sm-6 who-care-col">
+          <img class="change-theory-img" src="<%= WebsiteConfig.get('change-theory', current_locale) %>" alt="<%=t('block3.text')%>" />
+        </div>
+        <div class="col-sm-6">
+          <div class="heading-div-1 pt-20">
+            <p class="latest-news-lines">
+              <%= @theory_wpage.first_content_words(400, current_locale) %>
+            </p>
+            <p class="pt-20">
+              <a href="<%= @theory_wpage.path(current_locale)%>" class="btn"><%=t('read_more')%></a>					
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>			
-</section>	
+    </div>			
+  </section>	
+<% end %>

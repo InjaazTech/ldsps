@@ -7,7 +7,8 @@
     </div>
     <div class="row moving-row">
       <% for i in 2..5%>
-        <% wpage = Wpage.find(i) %>
+        <% wpage = Wpage.find_by(id: i) %>
+        <% next unless wpage %>
         <div class="col-sm-6 col-md-3 text-center moving-col moving-col-<%= i%2 == 0 ? 1 : 2 %>">
           <h3 class="h-80"><%= wpage.title(current_locale)%></h3>
           <p style="font-size: 16px !important;">
